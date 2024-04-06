@@ -116,6 +116,7 @@ export const AramRanks = () => {
 		let wCount = 0;
 		let lCount = 0;
 
+		// loops through all players and sets appropriate data for each player
 		for (let i = 0; i < ranks.length; i++) {
 			for (let j = 0; j < ranks[i].history.length; j++) {
 				if (
