@@ -153,7 +153,7 @@ export const AramRanks = () => {
 		}
 
 		setDisplayRanks(ranks);
-	});
+	}, []);
 
 	return (
 		<div>
