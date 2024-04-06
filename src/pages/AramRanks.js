@@ -141,7 +141,10 @@ export const AramRanks = () => {
 			ranks[i].losses = lCount;
 			ranks[i].winRate = (wCount / ranks[i].totalGamesPlayed) * 100;
 
-			ranks[i].mmr = ranks[i].wins * mmrWin - ranks[i].losses * mmrLoss;
+			ranks[i].mmr =
+				ranks[i].wins * mmrWin -
+				ranks[i].losses * mmrLoss +
+				ranks[i].mmr;
 
 			// set mmr to 0 if mr is negative
 			if (ranks[i].mmr < 0) {
