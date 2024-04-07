@@ -183,6 +183,27 @@ export const AramRanks = () => {
 
 	return (
 		<>
+			<header className="glass">
+				<div className="wrapper">
+					<nav>
+						<ul className="nav-flex">
+							<li>
+								<img
+									className="nav-gif"
+									src="https://i.gifer.com/1kt1.gif"
+									alt="Description of the GIF"
+								/>
+							</li>
+							<div className="nav-flex-2">
+								<li>Home</li>
+								<li>Rankings</li>
+								<li>Tier List</li>
+								<li>Ultimate ARAM</li>
+							</div>
+						</ul>
+					</nav>
+				</div>
+			</header>
 			<div className="wrapper">
 				<h1 className="aram-rankings-title glass">
 					<span className="retro-span">Retro </span>

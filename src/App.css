@@ -4,6 +4,57 @@
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+header {
+	font-size: 18px;
+	background-color: rgba(36, 142, 212, 0.247);
+	width: 100%;
+	position: sticky;
+	top: 0;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+}
+
+.nav-gif {
+	width: 100px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.nav-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-flex-2 {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+.nav-flex-2 > li {
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: 500ms;
+}
+
+.nav-flex-2 > li:hover {
+	background-color: aqua;
+	color: black;
+}
+
+ul {
+	list-style: none;
+}
+
 body {
 	background-image: url(imgs/retro-img.PNG);
 	background-repeat: no-repeat;
