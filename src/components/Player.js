@@ -10,7 +10,7 @@ export const Player = (props) => {
 	return (
 		<>
 			<div className="player-grid">
-				<h4 className="start">{props.name}</h4>
+				<h4 className="left">{props.name}</h4>
 				<p className="end">Wins: {props.wins}</p>
 				<p className="end">Losses: {props.losses}</p>
 				<p className="end">Games Played: {props.totalGamesPlayed}</p>
