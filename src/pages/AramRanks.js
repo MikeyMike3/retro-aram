@@ -105,15 +105,6 @@ const ranks = [
 		winRate: 0,
 		mmr: mmr,
 	},
-	{
-		name: "IGotCaughtWackin",
-		history: ["l", "w", "l", "l", "l"],
-		wins: 0,
-		losses: 0,
-		totalGamesPlayed: 0,
-		winRate: 0,
-		mmr: mmr,
-	},
 ];
 
 export const AramRanks = () => {
