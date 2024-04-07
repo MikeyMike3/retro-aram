@@ -159,18 +159,30 @@ export const AramRanks = () => {
 	}, []);
 
 	return (
-		<div>
-			{displayRanks.map((item) => (
-				<Player
-					key={item.name}
-					name={item.name}
-					wins={item.wins}
-					losses={item.losses}
-					totalGamesPlayed={item.totalGamesPlayed}
-					winRate={item.winRate}
-					mmr={item.mmr}
-				/>
-			))}
-		</div>
+		<>
+			<h1 className="aram-rankings-title ">
+				<span className="retro-span">Retro </span>
+				<span className="future-span">Future </span>
+				<span className="aram-span">Aram </span>
+				<span className="rankings-span">Rankings</span>
+			</h1>
+			<div className="hero-container">
+				<video src="video/retro-aram-video-1.mp4" autoPlay loop muted />
+
+				<div className="ranks-container glass">
+					{displayRanks.map((item) => (
+						<Player
+							key={item.name}
+							name={item.name}
+							wins={item.wins}
+							losses={item.losses}
+							totalGamesPlayed={item.totalGamesPlayed}
+							winRate={item.winRate}
+							mmr={item.mmr}
+						/>
+					))}
+				</div>
+			</div>
+		</>
 	);
 };
