@@ -43,7 +43,7 @@ const ranks = [
 		mmr: mmr,
 	},
 	{
-		name: "DrangoTheDude",
+		name: "Drango",
 		history: ["w", "l", "w"],
 		wins: 0,
 		losses: 0,
@@ -97,7 +97,7 @@ const ranks = [
 		mmr: mmr,
 	},
 	{
-		name: "IGotCaughtWackin",
+		name: "Loli",
 		history: ["l", "w", "l", "l", "l"],
 		wins: 0,
 		losses: 0,
