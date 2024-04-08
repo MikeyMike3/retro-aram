@@ -9,7 +9,7 @@ export const RootLayouts = () => {
 					<nav>
 						<ul className="nav-flex">
 							<li>
-								<NavLink>
+								<NavLink to="/">
 									<img
 										className="nav-gif"
 										src="https://i.gifer.com/1kt1.gif"
@@ -19,17 +19,17 @@ export const RootLayouts = () => {
 							</li>
 							<div className="nav-flex-2">
 								<li>
-									<NavLink>Home</NavLink>
+									<NavLink to="/">Home</NavLink>
 								</li>
 								<li>
-									<NavLink>Rankings</NavLink>
+									<NavLink to="rankings">Rankings</NavLink>
 								</li>
-								<li>
+								{/* <li>
 									<NavLink>Tier List</NavLink>
 								</li>
 								<li>
 									<NavLink>Ultimate ARAM</NavLink>
-								</li>
+								</li> */}
 							</div>
 						</ul>
 					</nav>

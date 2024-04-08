@@ -107,54 +107,49 @@ const ranks = [
 	},
 ];
 
+const mmrWin = 25;
+const mmrLoss = 15;
+let wCount = 0;
+let lCount = 0;
+
+// loops through all players and sets appropriate data for each player
+for (let i = 0; i < ranks.length; i++) {
+	for (let j = 0; j < ranks[i].history.length; j++) {
+		if ((ranks[i].history[j] === "W") | (ranks[i].history[j] === "w")) {
+			wCount++;
+		} else if (
+			(ranks[i].history[j] === "L") |
+			(ranks[i].history[j] === "l")
+		) {
+			lCount++;
+		}
+	}
+
+	if (ranks[i].totalGamesPlayed === 0) {
+		ranks[i].totalGamesPlayed = ranks[i].history.length;
+	}
+
+	// set data within the ranks array's objects
+	ranks[i].wins = wCount;
+	ranks[i].losses = lCount;
+	ranks[i].winRate = (wCount / ranks[i].totalGamesPlayed) * 100;
+
+	ranks[i].mmr =
+		ranks[i].wins * mmrWin - ranks[i].losses * mmrLoss + ranks[i].mmr;
+
+	// set mmr to 0 if mr is negative
+	if (ranks[i].mmr < 0) {
+		ranks[i].mmr = 0;
+	}
+
+	wCount = 0;
+	lCount = 0;
+}
+
 export const AramRanks = () => {
 	const [displayRanks, setDisplayRanks] = useState([]);
 
 	useEffect(() => {
-		const mmrWin = 25;
-		const mmrLoss = 15;
-		let wCount = 0;
-		let lCount = 0;
-
-		// loops through all players and sets appropriate data for each player
-		for (let i = 0; i < ranks.length; i++) {
-			for (let j = 0; j < ranks[i].history.length; j++) {
-				if (
-					(ranks[i].history[j] === "W") |
-					(ranks[i].history[j] === "w")
-				) {
-					wCount++;
-				} else if (
-					(ranks[i].history[j] === "L") |
-					(ranks[i].history[j] === "l")
-				) {
-					lCount++;
-				}
-			}
-
-			if (ranks[i].totalGamesPlayed === 0) {
-				ranks[i].totalGamesPlayed = ranks[i].history.length;
-			}
-
-			// set data within the ranks array's objects
-			ranks[i].wins = wCount;
-			ranks[i].losses = lCount;
-			ranks[i].winRate = (wCount / ranks[i].totalGamesPlayed) * 100;
-
-			ranks[i].mmr =
-				ranks[i].wins * mmrWin -
-				ranks[i].losses * mmrLoss +
-				ranks[i].mmr;
-
-			// set mmr to 0 if mr is negative
-			if (ranks[i].mmr < 0) {
-				ranks[i].mmr = 0;
-			}
-
-			wCount = 0;
-			lCount = 0;
-		}
-
 		if (Array.isArray(ranks)) {
 			// Filter out any undefined elements or elements that don't have the mmr property
 			const validRanks = ranks.filter(
