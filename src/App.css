@@ -44,7 +44,6 @@ header {
 	padding-top: 6px;
 	padding-bottom: 6px;
 	border-radius: 15px;
-	cursor: pointer;
 	transition: 500ms;
 	text-decoration: none;
 }
@@ -57,7 +56,6 @@ header {
 	padding-top: 6px;
 	padding-bottom: 6px;
 	border-radius: 15px;
-	cursor: pointer;
 	transition: 500ms;
 }
 
