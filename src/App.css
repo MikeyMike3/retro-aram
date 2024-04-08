@@ -37,13 +37,19 @@ header {
 	gap: 25px;
 }
 
-a {
+.nav-flex-2 a {
 	color: white;
-	text-decoration: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	border-radius: 15px;
+	cursor: pointer;
 	transition: 500ms;
+	text-decoration: none;
 }
 
-/* .active {
+.nav-flex-2 .active {
 	background-color: magenta;
 	color: black;
 	padding-left: 20px;
@@ -53,24 +59,9 @@ a {
 	border-radius: 15px;
 	cursor: pointer;
 	transition: 500ms;
-} */
-
-li:hover a {
-	color: black;
 }
 
-.nav-flex-2 > li {
-	color: white;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 6px;
-	padding-bottom: 6px;
-	border-radius: 15px;
-	cursor: pointer;
-	transition: 500ms;
-}
-
-.nav-flex-2 > li:hover {
+.nav-flex-2 a:hover {
 	background-color: aqua;
 	color: black;
 }
