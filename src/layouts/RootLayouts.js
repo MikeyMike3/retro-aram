@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, Link, Outlet } from "react-router-dom";
 import gif from "../imgs/palm-tree.gif";
 
 export const RootLayouts = () => {
@@ -10,13 +10,13 @@ export const RootLayouts = () => {
 					<nav>
 						<ul className="nav-flex">
 							<li>
-								<NavLink to="/">
+								<Link to="/">
 									<img
 										className="nav-gif"
 										src={gif}
 										alt="Description of the GIF"
 									/>
-								</NavLink>
+								</Link>
 							</li>
 							<div className="nav-flex-2">
 								<li>
