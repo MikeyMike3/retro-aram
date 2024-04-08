@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink, Link, Outlet } from "react-router-dom";
 import gif from "../imgs/palm-tree.gif";
 
