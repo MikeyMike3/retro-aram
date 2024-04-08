@@ -17,7 +17,7 @@ const mmr = 100;
 const ranks = [
 	{
 		name: "Siren",
-		history: ["w", "l", "w", "w", "w"],
+		history: ["w", "l", "w", "w", "w", "w", "w", "l", "l", "w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -26,7 +26,7 @@ const ranks = [
 	},
 	{
 		name: "You",
-		history: ["w", "l", "w", "w", "w"],
+		history: ["w", "l", "w", "w", "w", "w", "w", "w", "w", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -44,7 +44,7 @@ const ranks = [
 	},
 	{
 		name: "Drango",
-		history: ["w", "l", "w"],
+		history: ["w", "l", "w", "w", "w", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -53,7 +53,7 @@ const ranks = [
 	},
 	{
 		name: "Fries",
-		history: ["w", "l", "w", "l", "l"],
+		history: ["w", "l", "w", "l", "l", "l", "l", "w", "w", "w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -62,7 +62,7 @@ const ranks = [
 	},
 	{
 		name: "Ethiks",
-		history: ["l", "w", "l", "l", "l"],
+		history: ["l", "w", "l", "l", "l", "w", "w", "l", "l", "w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -71,7 +71,7 @@ const ranks = [
 	},
 	{
 		name: "Kane",
-		history: ["l", "w", "l", "w", "w"],
+		history: ["l", "w", "l", "w", "w", "w", "w", "w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -80,7 +80,7 @@ const ranks = [
 	},
 	{
 		name: "Amp",
-		history: ["l", "w", "l"],
+		history: ["l", "w", "l", "l", "l", "l", "l", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -89,7 +89,7 @@ const ranks = [
 	},
 	{
 		name: "Money",
-		history: ["l", "w", "l", "l", "l"],
+		history: ["l", "w", "l", "l", "l", "w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -98,7 +98,25 @@ const ranks = [
 	},
 	{
 		name: "Loli",
-		history: ["l", "w", "l", "l", "l"],
+		history: ["l", "w", "l", "l", "l", "l", "l", "w", "w", "l", "l"],
+		wins: 0,
+		losses: 0,
+		totalGamesPlayed: 0,
+		winRate: 0,
+		mmr: mmr,
+	},
+	{
+		name: "Argo",
+		history: ["l", "l"],
+		wins: 0,
+		losses: 0,
+		totalGamesPlayed: 0,
+		winRate: 0,
+		mmr: mmr,
+	},
+	{
+		name: "Gucci",
+		history: ["w", "l", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
