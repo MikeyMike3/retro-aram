@@ -225,9 +225,114 @@ function sortAscending(ranksArray, propertyName, setter) {
 export const AramRanks = () => {
 	const [displayRanks, setDisplayRanks] = useState([]);
 
+	const [mmrClickCounter, setMmrClickCounter] = useState(1);
+	const [winsClickCounter, setWinsClickCounter] = useState(0);
+	const [lossesClickCounter, setLossesClickCounter] = useState(0);
+	const [winRateClickCounter, setWinRateClickCounter] = useState(0);
+	const [totalGamesPlayedClickCounter, setTotalGamesPlayedClickCounter] =
+		useState(0);
+
+	const handleClickWins = () => {
+		setWinsClickCounter((clickCounter) => clickCounter + 1);
+	};
+
+	const handleClickLosses = () => {
+		setLossesClickCounter((clickCounter) => clickCounter + 1);
+	};
+
+	const handleClickWinRate = () => {
+		setWinRateClickCounter((clickCounter) => clickCounter + 1);
+	};
+
+	const handleClickTotalGamesPlayed = () => {
+		setTotalGamesPlayedClickCounter((clickCounter) => clickCounter + 1);
+	};
+
+	const handleClickMmr = () => {
+		setMmrClickCounter((clickCounter) => clickCounter + 1);
+	};
+
+	// wins filter
 	useEffect(() => {
-		sortReverseAscending(ranks, "mmr", setDisplayRanks);
-	}, []);
+		if (winsClickCounter === 1) {
+			setMmrClickCounter(0);
+			setLossesClickCounter(0);
+			setWinRateClickCounter(0);
+			setTotalGamesPlayedClickCounter(0);
+			sortReverseAscending(ranks, "wins", setDisplayRanks);
+		} else if (winsClickCounter === 2) {
+			sortAscending(ranks, "wins", setDisplayRanks);
+		} else if (winsClickCounter === 3) {
+			setWinsClickCounter(0);
+			setMmrClickCounter(1);
+		}
+	}, [winsClickCounter]);
+
+	// losses filter
+	useEffect(() => {
+		if (lossesClickCounter === 1) {
+			setMmrClickCounter(0);
+			setWinsClickCounter(0);
+			setWinRateClickCounter(0);
+			setTotalGamesPlayedClickCounter(0);
+			sortReverseAscending(ranks, "losses", setDisplayRanks);
+		} else if (lossesClickCounter === 2) {
+			sortAscending(ranks, "losses", setDisplayRanks);
+		} else if (lossesClickCounter === 3) {
+			setLossesClickCounter(0);
+			setMmrClickCounter(1);
+		}
+	}, [lossesClickCounter]);
+
+	// winRate filter
+	useEffect(() => {
+		if (winRateClickCounter === 1) {
+			setMmrClickCounter(0);
+			setWinsClickCounter(0);
+			setLossesClickCounter(0);
+			setTotalGamesPlayedClickCounter(0);
+			sortReverseAscending(ranks, "winRate", setDisplayRanks);
+		} else if (winRateClickCounter === 2) {
+			sortAscending(ranks, "winRate", setDisplayRanks);
+		} else if (winRateClickCounter === 3) {
+			setWinRateClickCounter(0);
+			setMmrClickCounter(1);
+		}
+	}, [winRateClickCounter]);
+
+	// totalGamesPlayed filter
+	useEffect(() => {
+		if (totalGamesPlayedClickCounter === 1) {
+			setMmrClickCounter(0);
+			setWinsClickCounter(0);
+			setLossesClickCounter(0);
+			setWinRateClickCounter(0);
+
+			sortReverseAscending(ranks, "totalGamesPlayed", setDisplayRanks);
+		} else if (totalGamesPlayedClickCounter === 2) {
+			sortAscending(ranks, "totalGamesPlayed", setDisplayRanks);
+		} else if (totalGamesPlayedClickCounter === 3) {
+			setTotalGamesPlayedClickCounter(0);
+			setMmrClickCounter(1);
+		}
+	}, [totalGamesPlayedClickCounter]);
+
+	// mmr filter
+	useEffect(() => {
+		if (mmrClickCounter === 1) {
+			setWinsClickCounter(0);
+			setLossesClickCounter(0);
+			setWinRateClickCounter(0);
+			setTotalGamesPlayedClickCounter(0);
+			sortReverseAscending(ranks, "mmr", setDisplayRanks);
+		} else if (mmrClickCounter === 2) {
+			sortAscending(ranks, "mmr", setDisplayRanks);
+		} else if (mmrClickCounter === 3) {
+			setMmrClickCounter(1);
+		}
+	}, [mmrClickCounter]);
+
+	const gridBtnClassNames = "end grid-btn";
 
 	return (
 		<div className="wrapper">
@@ -237,17 +342,75 @@ export const AramRanks = () => {
 				<span className="aram-span">Aram </span>
 				<span className="rankings-span">Rankings</span>
 			</h1>
-			<div className="hero-container">
-				{/* <video src="video/retro-aram-video-1.mp4" autoPlay loop muted /> */}
 
+			<div className="filter-key-container glass">
+				<h3>
+					<span className="rankings-span">Rankings</span> Filter Key
+				</h3>
+				<p className="ascending-key">
+					<span>Ascending</span> order(Lowest to Highest)
+				</p>
+				<p className="reverse-ascending-key">
+					<span>Descending</span> order(Highest to Lowest)
+				</p>
+			</div>
+
+			<div className="hero-container">
 				<div className="ranks-container glass">
 					<div className="player-grid grid-key">
 						<h4>Name</h4>
-						<h4 className="end">Wins</h4>
-						<h4 className="end">Losses</h4>
-						<h4 className="end">Games Played</h4>
-						<h4 className="end">Win Rate</h4>
-						<h4 className="end">MMR</h4>
+						<button
+							className={`${gridBtnClassNames} ${
+								winsClickCounter === 1
+									? "reverse-ascending"
+									: ""
+							} ${winsClickCounter === 2 ? "ascending" : ""}`}
+							onClick={handleClickWins}
+						>
+							Wins
+						</button>
+						<button
+							className={`${gridBtnClassNames} ${
+								lossesClickCounter === 1
+									? "reverse-ascending"
+									: ""
+							} ${lossesClickCounter === 2 ? "ascending" : ""}`}
+							onClick={handleClickLosses}
+						>
+							Losses
+						</button>
+						<button
+							className={`${gridBtnClassNames} ${
+								totalGamesPlayedClickCounter === 1
+									? "reverse-ascending"
+									: ""
+							} ${
+								totalGamesPlayedClickCounter === 2
+									? "ascending"
+									: ""
+							}`}
+							onClick={handleClickTotalGamesPlayed}
+						>
+							Games Played
+						</button>
+						<button
+							className={`${gridBtnClassNames} ${
+								winRateClickCounter === 1
+									? "reverse-ascending"
+									: ""
+							} ${winRateClickCounter === 2 ? "ascending" : ""}`}
+							onClick={handleClickWinRate}
+						>
+							Win Rate
+						</button>
+						<button
+							className={`${gridBtnClassNames} ${
+								mmrClickCounter === 1 ? "reverse-ascending" : ""
+							} ${mmrClickCounter === 2 ? "ascending" : ""}`}
+							onClick={handleClickMmr}
+						>
+							MMR
+						</button>
 					</div>
 					{displayRanks.map((item) => (
 						<Player
