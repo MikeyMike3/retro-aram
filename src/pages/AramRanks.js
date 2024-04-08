@@ -182,61 +182,38 @@ export const AramRanks = () => {
 	}, []);
 
 	return (
-		<>
-			<header className="glass">
-				<div className="wrapper">
-					<nav>
-						<ul className="nav-flex">
-							<li>
-								<img
-									className="nav-gif"
-									src="https://i.gifer.com/1kt1.gif"
-									alt="Description of the GIF"
-								/>
-							</li>
-							<div className="nav-flex-2">
-								<li>Home</li>
-								<li>Rankings</li>
-								<li>Tier List</li>
-								<li>Ultimate ARAM</li>
-							</div>
-						</ul>
-					</nav>
-				</div>
-			</header>
-			<div className="wrapper">
-				<h1 className="aram-rankings-title glass">
-					<span className="retro-span">Retro </span>
-					<span className="future-span">Future </span>
-					<span className="aram-span">Aram </span>
-					<span className="rankings-span">Rankings</span>
-				</h1>
-				<div className="hero-container">
-					{/* <video src="video/retro-aram-video-1.mp4" autoPlay loop muted /> */}
+		<div className="wrapper">
+			<h1 className="aram-rankings-title glass">
+				<span className="retro-span">Retro </span>
+				<span className="future-span">Future </span>
+				<span className="aram-span">Aram </span>
+				<span className="rankings-span">Rankings</span>
+			</h1>
+			<div className="hero-container">
+				{/* <video src="video/retro-aram-video-1.mp4" autoPlay loop muted /> */}
 
-					<div className="ranks-container glass">
-						<div className="player-grid grid-key">
-							<h4>Name</h4>
-							<h4 className="end">Wins</h4>
-							<h4 className="end">Losses</h4>
-							<h4 className="end">Games Played</h4>
-							<h4 className="end">Win Rate</h4>
-							<h4 className="end">MMR</h4>
-						</div>
-						{displayRanks.map((item) => (
-							<Player
-								key={item.name}
-								name={item.name}
-								wins={item.wins}
-								losses={item.losses}
-								totalGamesPlayed={item.totalGamesPlayed}
-								winRate={item.winRate}
-								mmr={item.mmr}
-							/>
-						))}
+				<div className="ranks-container glass">
+					<div className="player-grid grid-key">
+						<h4>Name</h4>
+						<h4 className="end">Wins</h4>
+						<h4 className="end">Losses</h4>
+						<h4 className="end">Games Played</h4>
+						<h4 className="end">Win Rate</h4>
+						<h4 className="end">MMR</h4>
 					</div>
+					{displayRanks.map((item) => (
+						<Player
+							key={item.name}
+							name={item.name}
+							wins={item.wins}
+							losses={item.losses}
+							totalGamesPlayed={item.totalGamesPlayed}
+							winRate={item.winRate}
+							mmr={item.mmr}
+						/>
+					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
