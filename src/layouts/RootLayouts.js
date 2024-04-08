@@ -12,7 +12,7 @@ export const RootLayouts = () => {
 								<NavLink to="/">
 									<img
 										className="nav-gif"
-										src="https://i.gifer.com/1kt1.gif"
+										src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExam43N2prZnRmMmN2cGY3ZW8yZnh2c2d6Z2FnbmpnYXB4bXRhYWcweiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/b0HYKHINjL32qEsoJt/giphy.gif"
 										alt="Description of the GIF"
 									/>
 								</NavLink>
