@@ -164,34 +164,69 @@ for (let i = 0; i < ranks.length; i++) {
 	lCount = 0;
 }
 
+function sortReverseAscending(ranksArray, propertyName, setter) {
+	if (Array.isArray(ranksArray)) {
+		// Filter out any undefined elements or elements that don't have the specified property
+		const validRanks = ranksArray.filter(
+			(rank) =>
+				rank &&
+				typeof rank === "object" &&
+				rank.hasOwnProperty(propertyName)
+		);
+
+		// Check if the filtered array is not empty
+		if (validRanks.length > 0) {
+			// Sort the valid ranks array based on the specified property
+			const sortedRanks = validRanks.sort(
+				(a, b) => b[propertyName] - a[propertyName]
+			);
+
+			// Call setDisplayRanks with the sorted array
+			setter(sortedRanks);
+		} else {
+			console.error(
+				`All elements in ranks are undefined or do not have '${propertyName}' property`
+			);
+		}
+	} else {
+		console.error("ranks is not an array or is undefined");
+	}
+}
+
+function sortAscending(ranksArray, propertyName, setter) {
+	if (Array.isArray(ranksArray)) {
+		// Filter out any undefined elements or elements that don't have the specified property
+		const validRanks = ranksArray.filter(
+			(rank) =>
+				rank &&
+				typeof rank === "object" &&
+				rank.hasOwnProperty(propertyName)
+		);
+
+		// Check if the filtered array is not empty
+		if (validRanks.length > 0) {
+			// Sort the valid ranks array based on the specified property
+			const sortedRanks = validRanks.sort(
+				(a, b) => a[propertyName] - b[propertyName]
+			);
+
+			// Call setDisplayRanks with the sorted array
+			setter(sortedRanks);
+		} else {
+			console.error(
+				`All elements in ranks are undefined or do not have '${propertyName}' property`
+			);
+		}
+	} else {
+		console.error("ranks is not an array or is undefined");
+	}
+}
+
 export const AramRanks = () => {
 	const [displayRanks, setDisplayRanks] = useState([]);
 
 	useEffect(() => {
-		if (Array.isArray(ranks)) {
-			// Filter out any undefined elements or elements that don't have the mmr property
-			const validRanks = ranks.filter(
-				(rank) =>
-					rank &&
-					typeof rank === "object" &&
-					rank.hasOwnProperty("mmr")
-			);
-
-			// Check if the filtered array is not empty
-			if (validRanks.length > 0) {
-				// Sort the valid ranks array based on mmr
-				const sortedRanks = validRanks.sort((a, b) => b.mmr - a.mmr);
-
-				// Call setDisplayRanks with the sorted array
-				setDisplayRanks(sortedRanks);
-			} else {
-				console.error(
-					"All elements in ranks are undefined or do not have 'mmr' property"
-				);
-			}
-		} else {
-			console.error("ranks is not an array or is undefined");
-		}
+		sortReverseAscending(ranks, "mmr", setDisplayRanks);
 	}, []);
 
 	return (
