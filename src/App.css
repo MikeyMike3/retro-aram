@@ -228,3 +228,40 @@ hr {
 .grid-key > h4 {
 	color: aqua;
 }
+
+/* start of Tier List styling*/
+/* .grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 10px;
+	grid-auto-flow: dense;
+} */
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 300px 1fr; /* 400px for the first column, and 1fr for the second column */
+	grid-gap: 10px; /* Optional gap between grid items */
+}
+
+/* Define grid within the second column */
+.grid-item {
+	background-color: lightgray;
+	padding: 10px;
+	border: 1px solid gray;
+}
+
+.column-two-grid {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(200px, 200px)
+	); /* Four columns, each taking up 1 fraction */
+	grid-auto-flow: row; /* Make items flow into rows */
+	grid-gap: 10px; /* Optional gap between grid items */
+}
+
+.a {
+	height: 200px;
+}
+
+/* end of Tier List styling*/

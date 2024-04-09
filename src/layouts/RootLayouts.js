@@ -25,12 +25,9 @@ export const RootLayouts = () => {
 								<li>
 									<NavLink to="rankings">Rankings</NavLink>
 								</li>
-								{/* <li>
-									<NavLink>Tier List</NavLink>
-								</li>
 								<li>
-									<NavLink>Ultimate ARAM</NavLink>
-								</li> */}
+									<NavLink to="tier-list">Tier List</NavLink>
+								</li>
 							</div>
 						</ul>
 					</nav>
