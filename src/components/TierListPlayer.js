@@ -5,7 +5,7 @@ export const TierListPlayer = (props) => {
 		<div className="tier-list-grid-item">
 			<div className="tier-list-img-container">
 				<img src={props.img} alt="player tier list pic"></img>
-				<p className="tier-list-player-name">{props.name}</p>
+				<p className="tier-list-player-name glass">{props.name}</p>
 			</div>
 		</div>
 	);

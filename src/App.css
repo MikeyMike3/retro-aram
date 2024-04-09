@@ -306,9 +306,15 @@ hr {
 
 .tier-list-player-name {
 	color: white;
+	padding: 15px;
 	position: absolute;
 	bottom: 15px;
 	left: 15px;
+	border-radius: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 }
 
 /* end of Tier List styling*/
