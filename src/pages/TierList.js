@@ -8,11 +8,11 @@ const sTier = [
 	},
 	{
 		name: "Siren",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/siren-disc.PNG"),
 	},
 	{
 		name: "Ethiks",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/ethiks-disc.png"),
 	},
 	{
 		name: "Loli",
@@ -34,7 +34,7 @@ const bTier = [
 	},
 	{
 		name: "You",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/you-disc.gif"),
 	},
 	{
 		name: "Amp",
@@ -64,7 +64,7 @@ const dTier = [
 	},
 	{
 		name: "Gucci",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/gucci-disc.PNG"),
 	},
 ];
 
