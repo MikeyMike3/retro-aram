@@ -16,7 +16,7 @@ const sTier = [
 	},
 	{
 		name: "Loli",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/loli-disc.png"),
 	},
 ];
 
