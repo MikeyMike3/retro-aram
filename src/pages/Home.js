@@ -13,7 +13,8 @@ export const Home = () => {
 				<p className="description">
 					This website is for all things{" "}
 					<span className="aram-span">Aram</span>. We got our own
-					ranked leaderboard with more features to come. Stay tuned.
+					ranked leaderboard and tier list with more features to come.
+					Stay tuned.
 				</p>
 			</div>
 		</div>
