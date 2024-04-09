@@ -53,14 +53,14 @@ const cTier = [
 	},
 	{
 		name: "Argo",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/argo-disc.png"),
 	},
 ];
 
 const dTier = [
 	{
 		name: "Money",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/money-disc.png"),
 	},
 	{
 		name: "Gucci",
