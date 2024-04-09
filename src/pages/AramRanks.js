@@ -348,11 +348,18 @@ export const AramRanks = () => {
 					<span className="rankings-span">Rankings</span> Filter Key
 				</h3>
 				<p className="ascending-key">
-					<span>Ascending</span> order(Lowest to Highest)
+					<span>Ascending</span> order(Lowest to Highest).
 				</p>
 				<p className="reverse-ascending-key">
-					<span>Descending</span> order(Highest to Lowest)
+					<span>Descending</span> order(Highest to Lowest).
 				</p>
+				<p className="reverse-ascending-key">
+					1 click for <span>descending</span> order.
+				</p>
+				<p className="ascending-key">
+					2 clicks for <span>ascending</span> order.
+				</p>
+				<p>Click the stat labels below to sort.</p>
 			</div>
 
 			<div className="hero-container">

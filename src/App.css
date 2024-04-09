@@ -129,6 +129,10 @@ body {
 	margin-bottom: 5px;
 }
 
+.reverse-ascending-key {
+	margin-bottom: 5px;
+}
+
 .ascending-key span {
 	color: magenta;
 }
@@ -143,7 +147,6 @@ body {
 	border-radius: 15px;
 	padding: 25px;
 	width: 100%;
-	/* overflow-y: scroll; */
 	background-color: rgba(36, 142, 212, 0.247);
 	margin-bottom: 25px;
 }
@@ -230,38 +233,82 @@ hr {
 }
 
 /* start of Tier List styling*/
-/* .grid-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-	gap: 10px;
-	grid-auto-flow: dense;
-} */
 
-.grid-container {
-	display: grid;
-	grid-template-columns: 300px 1fr; /* 400px for the first column, and 1fr for the second column */
-	grid-gap: 10px; /* Optional gap between grid items */
+.tier-list-title {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	border-radius: 15px;
+	max-width: 900px;
+	font-size: 64px;
+	background-color: rgba(36, 142, 212, 0.247);
+	color: white;
+	padding: 15px;
 }
 
-/* Define grid within the second column */
-.grid-item {
-	background-color: lightgray;
-	padding: 10px;
-	border: 1px solid gray;
-}
-
-.column-two-grid {
+.tier-list-grid-container {
 	display: grid;
-	grid-template-columns: repeat(
-		auto-fit,
-		minmax(200px, 200px)
-	); /* Four columns, each taking up 1 fraction */
-	grid-auto-flow: row; /* Make items flow into rows */
-	grid-gap: 10px; /* Optional gap between grid items */
+	grid-template-columns: 300px 1fr;
 }
 
-.a {
+.tier-list-grid-item {
+	border-radius: 15px;
 	height: 200px;
+}
+
+.tier-list-column-two-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+	grid-auto-flow: row;
+	grid-gap: 10px;
+	padding: 25px;
+	padding-left: 0px;
+	background-color: rgba(36, 142, 212, 0.247);
+	margin-bottom: 25px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	z-index: -1;
+}
+
+.letter-rank-tier {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 200px;
+	background-color: rgba(36, 142, 212, 0.247);
+	margin-bottom: 25px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	z-index: -1;
+}
+
+.tier-list-column-two-grid-top,
+.rank-tier-list-top {
+	margin-top: 25px;
+}
+
+.tier-list-img-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+}
+
+.tier-list-img-container img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	border-radius: 15px;
+}
+
+.tier-list-player-name {
+	color: white;
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
 }
 
 /* end of Tier List styling*/

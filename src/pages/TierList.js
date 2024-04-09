@@ -1,89 +1,126 @@
 import React from "react";
+import { TierListPlayer } from "../components/TierListPlayer";
 
 const sTier = [
 	{
 		name: "Plexo",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 	{
 		name: "Siren",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 	{
 		name: "Ethiks",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 	{
 		name: "Loli",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 ];
 
 const aTier = [
 	{
 		name: "Shady",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 ];
 
 const bTier = [
 	{
 		name: "Fries",
-		img: "",
+		img: require("../imgs/fries.png"),
 	},
 	{
 		name: "You",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 	{
 		name: "Amp",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 ];
 
 const cTier = [
 	{
 		name: "Ronin",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 	{
 		name: "Drango",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 	{
 		name: "Argo",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 ];
 
 const dTier = [
 	{
 		name: "Money",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 	{
 		name: "Tyler",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 ];
 
 const fTier = [
 	{
 		name: "Sarah",
-		img: "",
+		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 ];
 
 export const TierList = () => {
 	return (
 		<div className="wrapper">
-			<div className="grid-container">
-				<div className="grid-item">Column 1 (400px)</div>
-				<div className="grid-item column-two-grid">
-					<div className="grid-item a">Column 2.1</div>
-					<div className="grid-item a">Column 2.2</div>
-					<div className="grid-item a">Column 2.3</div>
-					<div className="grid-item a">Column 2.4</div>
+			<h3 className="tier-list-title glass">
+				<span className="retro-span">Retro </span>
+				<span className="future-span">Future </span>
+				Tier List
+			</h3>
+			<div className="tier-list-grid-container ">
+				<div className="letter-rank-tier rank-tier-list-top glass">
+					S
+				</div>
+				<div className="tier-list-column-two-grid tier-list-column-two-grid-top glass">
+					{sTier.map((item) => (
+						<TierListPlayer name={item.name} img={item.img} />
+					))}
+				</div>
+				<div className="letter-rank-tier glass">A</div>
+				<div className="tier-list-column-two-grid glass">
+					{aTier.map((item) => (
+						<TierListPlayer name={item.name} img={item.img} />
+					))}
+				</div>
+				<div className="letter-rank-tier glass">B</div>
+				<div className="tier-list-column-two-grid glass">
+					{bTier.map((item) => (
+						<TierListPlayer name={item.name} img={item.img} />
+					))}
+				</div>
+				<div className="letter-rank-tier glass">C</div>
+				<div className="tier-list-column-two-grid glass">
+					{cTier.map((item) => (
+						<TierListPlayer name={item.name} img={item.img} />
+					))}
+				</div>
+				<div className="letter-rank-tier glass">D</div>
+				<div className="tier-list-column-two-grid glass">
+					{dTier.map((item) => (
+						<TierListPlayer name={item.name} img={item.img} />
+					))}
+				</div>
+				<div className="letter-rank-tier glass">F</div>
+				<div className="tier-list-column-two-grid glass">
+					{fTier.map((item) => (
+						<TierListPlayer name={item.name} img={item.img} />
+					))}
 				</div>
 			</div>
 		</div>
