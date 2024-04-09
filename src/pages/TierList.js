@@ -4,7 +4,7 @@ import { TierListPlayer } from "../components/TierListPlayer";
 const sTier = [
 	{
 		name: "Plexo",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/chase-disc.PNG"),
 	},
 	{
 		name: "Siren",
