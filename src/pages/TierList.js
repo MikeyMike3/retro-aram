@@ -63,7 +63,7 @@ const dTier = [
 		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 	{
-		name: "Tyler",
+		name: "Gucci",
 		img: require("../imgs/tier-list-img-placeholder.jpeg"),
 	},
 ];
