@@ -1,8 +1,30 @@
+/* start of global styling*/
 * {
 	margin: 0;
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+	background-image: url(imgs/retro-img.PNG);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-color: black;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.glass {
+	backdrop-filter: blur(20px);
+	z-index: 1;
+}
+
+/* end of global styling*/
 
 /* header styling */
 
@@ -70,7 +92,7 @@ ul {
 
 /* end of header styling */
 
-/* home page styling*/
+/* start of home page styling*/
 
 .welcome {
 	margin-left: auto;
@@ -99,19 +121,7 @@ ul {
 
 /* end of home page styling*/
 
-body {
-	background-image: url(imgs/retro-img.PNG);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment: fixed;
-	background-color: black;
-}
-
-.wrapper {
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-}
+/* start of rankings page styling*/
 
 .filter-key-container {
 	background-color: rgba(36, 142, 212, 0.247);
@@ -149,11 +159,6 @@ body {
 	width: 100%;
 	background-color: rgba(36, 142, 212, 0.247);
 	margin-bottom: 25px;
-}
-
-.glass {
-	backdrop-filter: blur(20px);
-	z-index: 1;
 }
 
 .player-grid {
@@ -231,6 +236,8 @@ hr {
 .grid-key > h4 {
 	color: aqua;
 }
+
+/* end of rankings page styling*/
 
 /* start of Tier List styling*/
 
