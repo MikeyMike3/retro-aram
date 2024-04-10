@@ -45,7 +45,7 @@ const bTier = [
 const cTier = [
 	{
 		name: "Ronin",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/ronin-disc.png"),
 	},
 	{
 		name: "Drango",
