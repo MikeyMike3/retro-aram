@@ -75,6 +75,26 @@ const fTier = [
 	},
 ];
 
+// const combinedArrays = {
+// 	dTierArray: dTier,
+// 	fTierArray: fTier,
+// };
+
+// const arrayNames = Object.keys(combinedArrays);
+
+// for (let i = 0; i < arrayNames.length; i++) {
+// 	const currentArray = combinedArrays[arrayNames[i]];
+
+// 	for (let j = 0; j < currentArray.length; j++) {
+// 	}
+// }
+
+// for (let i = 0; i >= combinedArrays.length; i++) {
+// 	for (let j = 0; j >= combinedArrays.dTierArray; j++) {
+// 		console.log(combinedArrays[i].dTierArray.name[j]);
+// 	}
+// }
+
 export const TierList = () => {
 	return (
 		<div className="wrapper">
@@ -89,37 +109,61 @@ export const TierList = () => {
 				</div>
 				<div className="tier-list-column-two-grid tier-list-column-two-grid-top glass">
 					{sTier.map((item) => (
-						<TierListPlayer name={item.name} img={item.img} />
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
 					))}
 				</div>
 				<div className="letter-rank-tier glass">A</div>
 				<div className="tier-list-column-two-grid glass">
 					{aTier.map((item) => (
-						<TierListPlayer name={item.name} img={item.img} />
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
 					))}
 				</div>
 				<div className="letter-rank-tier glass">B</div>
 				<div className="tier-list-column-two-grid glass">
 					{bTier.map((item) => (
-						<TierListPlayer name={item.name} img={item.img} />
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
 					))}
 				</div>
 				<div className="letter-rank-tier glass">C</div>
 				<div className="tier-list-column-two-grid glass">
 					{cTier.map((item) => (
-						<TierListPlayer name={item.name} img={item.img} />
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
 					))}
 				</div>
 				<div className="letter-rank-tier glass">D</div>
 				<div className="tier-list-column-two-grid glass">
 					{dTier.map((item) => (
-						<TierListPlayer name={item.name} img={item.img} />
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
 					))}
 				</div>
 				<div className="letter-rank-tier glass">F</div>
 				<div className="tier-list-column-two-grid glass">
 					{fTier.map((item) => (
-						<TierListPlayer name={item.name} img={item.img} />
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
 					))}
 				</div>
 			</div>
