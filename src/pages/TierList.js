@@ -71,7 +71,7 @@ const dTier = [
 const fTier = [
 	{
 		name: "Sarah",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/sarah-disc.PNG"),
 	},
 ];
 
