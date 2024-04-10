@@ -38,7 +38,7 @@ const bTier = [
 	},
 	{
 		name: "Amp",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/amp-disc.png"),
 	},
 ];
 
