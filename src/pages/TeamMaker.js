@@ -647,6 +647,7 @@ export const TeamMaker = () => {
 					key={item.id}
 					name={item.name}
 					img={item.img}
+					rank={item.rank}
 				/>
 			))}
 			<h3>Team 2:</h3>
@@ -656,6 +657,7 @@ export const TeamMaker = () => {
 					key={item.id}
 					name={item.name}
 					img={item.img}
+					rank={item.rank}
 				/>
 			))}
 		</div>

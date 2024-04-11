@@ -5,21 +5,25 @@ export const sTier = [
 	{
 		name: "Plexo",
 		img: require("../imgs/chase-disc.PNG"),
+		rank: "S",
 		id: "Plexo",
 	},
 	{
 		name: "Siren",
 		img: require("../imgs/siren-disc.PNG"),
+		rank: "S",
 		id: "Siren",
 	},
 	{
 		name: "Ethiks",
 		img: require("../imgs/ethiks-disc.png"),
+		rank: "S",
 		id: "Ethiks",
 	},
 	{
 		name: "Loli",
 		img: require("../imgs/loli-disc.png"),
+		rank: "S",
 		id: "Loli",
 	},
 ];
@@ -28,6 +32,7 @@ export const aTier = [
 	{
 		name: "Shady",
 		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		rank: "A",
 		id: "Shady",
 	},
 ];
@@ -36,16 +41,19 @@ export const bTier = [
 	{
 		name: "Fries",
 		img: require("../imgs/fries.png"),
+		rank: "B",
 		id: "Fries",
 	},
 	{
 		name: "You",
 		img: require("../imgs/you-disc.gif"),
+		rank: "B",
 		id: "You",
 	},
 	{
 		name: "Amp",
 		img: require("../imgs/amp-disc.png"),
+		rank: "B",
 		id: "Amp",
 	},
 ];
@@ -54,16 +62,19 @@ export const cTier = [
 	{
 		name: "Ronin",
 		img: require("../imgs/ronin-disc.png"),
+		rank: "C",
 		id: "Ronin",
 	},
 	{
 		name: "Drango",
 		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		rank: "C",
 		id: "Drango",
 	},
 	{
 		name: "Argo",
 		img: require("../imgs/argo-disc.png"),
+		rank: "C",
 		id: "Argo",
 	},
 ];
@@ -72,11 +83,13 @@ export const dTier = [
 	{
 		name: "Money",
 		img: require("../imgs/money-disc.png"),
+		rank: "D",
 		id: "Money",
 	},
 	{
 		name: "Gucci",
 		img: require("../imgs/gucci-disc.PNG"),
+		rank: "D",
 		id: "Gucci",
 	},
 ];
@@ -85,6 +98,7 @@ export const fTier = [
 	{
 		name: "Sarah",
 		img: require("../imgs/sarah-disc.PNG"),
+		rank: "F",
 		id: "Sarah",
 	},
 ];
