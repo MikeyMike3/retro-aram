@@ -103,26 +103,6 @@ export const fTier = [
 	},
 ];
 
-// const combinedArrays = {
-// 	dTierArray: dTier,
-// 	fTierArray: fTier,
-// };
-
-// const arrayNames = Object.keys(combinedArrays);
-
-// for (let i = 0; i < arrayNames.length; i++) {
-// 	const currentArray = combinedArrays[arrayNames[i]];
-
-// 	for (let j = 0; j < currentArray.length; j++) {
-// 	}
-// }
-
-// for (let i = 0; i >= combinedArrays.length; i++) {
-// 	for (let j = 0; j >= combinedArrays.dTierArray; j++) {
-// 		console.log(combinedArrays[i].dTierArray.name[j]);
-// 	}
-// }
-
 export const TierList = () => {
 	return (
 		<div className="wrapper">
