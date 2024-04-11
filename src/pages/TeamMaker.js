@@ -119,7 +119,7 @@ export const TeamMaker = () => {
 	};
 
 	const updateTeamRating = (counter, teamRating, tier) => {
-		teamRating += counter * tier;
+		teamRating += tier;
 		return teamRating;
 	};
 
