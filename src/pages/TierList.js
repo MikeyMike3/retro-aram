@@ -22,7 +22,7 @@ export const sTier = [
 	},
 	{
 		name: "Loli",
-		img: require("../imgs/loli-disc.png"),
+		img: require("../imgs/loli-disc.gif"),
 		rank: "S",
 		id: "Loli",
 	},
@@ -67,7 +67,7 @@ export const cTier = [
 	},
 	{
 		name: "Drango",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/drango-disc.png"),
 		rank: "C",
 		id: "Drango",
 	},
