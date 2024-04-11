@@ -133,6 +133,9 @@ export const TeamMaker = () => {
 		setTeamOne([]);
 		setTeamTwo([]);
 
+		setTeamOneRating(0);
+		setTeamTwoRating(0);
+
 		let tempTeamOneArray = [];
 		let tempTeamTwoArray = [];
 
