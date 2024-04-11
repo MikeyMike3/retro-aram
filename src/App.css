@@ -326,3 +326,22 @@ hr {
 }
 
 /* end of Tier List styling*/
+
+/* start of team maker styling*/
+
+.team-maker-title {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	border-radius: 15px;
+	max-width: 900px;
+	font-size: 64px;
+	background-color: rgba(36, 142, 212, 0.247);
+	color: white;
+	padding: 15px;
+}
+
+.team-maker-container {
+	color: white;
+}

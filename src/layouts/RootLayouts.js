@@ -28,6 +28,11 @@ export const RootLayouts = () => {
 								<li>
 									<NavLink to="tier-list">Tier List</NavLink>
 								</li>
+								<li>
+									<NavLink to="team-maker">
+										Team Maker
+									</NavLink>
+								</li>
 							</div>
 						</ul>
 					</nav>

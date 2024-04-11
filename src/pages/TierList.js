@@ -1,77 +1,91 @@
 import React from "react";
 import { TierListPlayer } from "../components/TierListPlayer";
 
-const sTier = [
+export const sTier = [
 	{
 		name: "Plexo",
 		img: require("../imgs/chase-disc.PNG"),
+		id: "Plexo",
 	},
 	{
 		name: "Siren",
 		img: require("../imgs/siren-disc.PNG"),
+		id: "Siren",
 	},
 	{
 		name: "Ethiks",
 		img: require("../imgs/ethiks-disc.png"),
+		id: "Ethiks",
 	},
 	{
 		name: "Loli",
 		img: require("../imgs/loli-disc.png"),
+		id: "Loli",
 	},
 ];
 
-const aTier = [
+export const aTier = [
 	{
 		name: "Shady",
 		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		id: "Shady",
 	},
 ];
 
-const bTier = [
+export const bTier = [
 	{
 		name: "Fries",
 		img: require("../imgs/fries.png"),
+		id: "Fries",
 	},
 	{
 		name: "You",
 		img: require("../imgs/you-disc.gif"),
+		id: "You",
 	},
 	{
 		name: "Amp",
 		img: require("../imgs/amp-disc.png"),
+		id: "Amp",
 	},
 ];
 
-const cTier = [
+export const cTier = [
 	{
 		name: "Ronin",
 		img: require("../imgs/ronin-disc.png"),
+		id: "Ronin",
 	},
 	{
 		name: "Drango",
 		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		id: "Drango",
 	},
 	{
 		name: "Argo",
 		img: require("../imgs/argo-disc.png"),
+		id: "Argo",
 	},
 ];
 
-const dTier = [
+export const dTier = [
 	{
 		name: "Money",
 		img: require("../imgs/money-disc.png"),
+		id: "Money",
 	},
 	{
 		name: "Gucci",
 		img: require("../imgs/gucci-disc.PNG"),
+		id: "Gucci",
 	},
 ];
 
-const fTier = [
+export const fTier = [
 	{
 		name: "Sarah",
 		img: require("../imgs/sarah-disc.PNG"),
+		id: "Sarah",
 	},
 ];
 
