@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link, Outlet } from "react-router-dom";
-import gif from "../imgs/palm-tree.gif";
+import gif from "../imgs/retro-future.gif";
 
 export const RootLayouts = () => {
 	return (
