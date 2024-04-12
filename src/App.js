@@ -10,6 +10,7 @@ import { RootLayouts } from "./layouts/RootLayouts";
 import { Home } from "./pages/Home";
 import { TierList } from "./pages/TierList";
 import { TeamMaker } from "./pages/TeamMaker";
+import { UltimateAram } from "./pages/UltimateAram";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
 			<Route path="rankings" element={<AramRanks />}></Route>
 			<Route path="tier-list" element={<TierList />}></Route>
 			<Route path="team-maker" element={<TeamMaker />}></Route>
+			<Route path="ultimate-aram" element={<UltimateAram />}></Route>
 		</Route>
 	)
 );

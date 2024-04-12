@@ -33,6 +33,11 @@ export const RootLayouts = () => {
 										Team Maker
 									</NavLink>
 								</li>
+								<li>
+									<NavLink to="ultimate-aram">
+										Ultimate Aram
+									</NavLink>
+								</li>
 							</div>
 						</ul>
 					</nav>
