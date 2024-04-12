@@ -4,7 +4,7 @@ import { TierListPlayer } from "../components/TierListPlayer";
 export const sTier = [
 	{
 		name: "Plexo",
-		img: require("../imgs/chase-disc.PNG"),
+		img: require("../imgs/plexo-disc.gif"),
 		rank: "S",
 		id: "Plexo",
 	},
