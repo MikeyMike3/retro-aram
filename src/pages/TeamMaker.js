@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { sTier, aTier, bTier, cTier, dTier, fTier } from "./TierList";
 import { TeamMakerPlayer } from "../components/TeamMakerPlayer";
 
