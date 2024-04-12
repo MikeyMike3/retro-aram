@@ -144,7 +144,7 @@ export const TeamMaker = () => {
 		const bTierPoints = 8;
 		const cTierPoints = 7;
 		const dTierPoints = 6;
-		const fTierPoints = 5.5;
+		const fTierPoints = 5;
 
 		let teamOneSTierCounter = 0;
 		let teamOneATierCounter = 0;
