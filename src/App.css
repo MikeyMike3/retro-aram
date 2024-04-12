@@ -21,7 +21,6 @@ body {
 
 .glass {
 	backdrop-filter: blur(20px);
-	z-index: 1;
 }
 
 /* end of global styling*/
@@ -39,6 +38,7 @@ header {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	box-sizing: border-box;
+	z-index: 9999;
 }
 
 .nav-gif {
@@ -342,8 +342,176 @@ hr {
 	padding: 15px;
 }
 
-.team-maker-container {
+.team-maker-description {
+	margin-top: 25px;
 	color: white;
+	background-color: rgba(36, 142, 212, 0.247);
+	border-radius: 15px;
+	padding: 15px;
 }
 
+.team-maker-description p {
+	margin-bottom: 7.5px;
+}
+
+.team-maker-span {
+	color: aqua;
+}
+
+.team-rating-span {
+	color: magenta;
+}
+
+.team-maker-container {
+	box-sizing: border-box;
+	margin-top: 25px;
+	color: white;
+	background-color: rgba(36, 142, 212, 0.247);
+	border-radius: 15px;
+	height: 100%;
+	z-index: 1;
+}
+
+.team-maker-grid {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 25px;
+}
+
+.teams-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 100%;
+}
+
+.team-one {
+	border-right: 0.5px solid white;
+	padding: 15px;
+}
+
+.team-two {
+	border-left: 0.5px solid white;
+	padding: 15px;
+}
+
+.team-one h3,
+.team-one h4,
+.team-two h3,
+.team-two h4 {
+	text-align: center;
+}
+
+.team-one h3,
+.team-two h3 {
+	margin-bottom: 7.5px;
+}
+
+.team-one h4,
+.team-two h4 {
+	margin-bottom: 20px;
+}
+
+.team-maker-player-flex {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.team-maker-player-img-container {
+	width: 75px;
+	height: 75px;
+	border-radius: 15px;
+}
+
+.team-maker-player-img-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 15px;
+}
+
+.team-maker-player-flex h1 {
+	margin-right: 15px;
+}
+
+.team-maker-player-rank {
+	margin-left: 15px;
+}
+
+.checkbox-wrapper {
+	display: flex;
+	align-items: center;
+	margin-bottom: 7px;
+	gap: 15px;
+}
+
+.team-maker-checkboxes-container {
+	padding: 15px;
+}
+
+.team-maker-checkboxes-container h3 {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	height: 30px;
+	width: 30px;
+	background-color: white;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+input[type="checkbox"]:after {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f00c";
+	font-size: 20px;
+	display: none;
+}
+
+/* input[type="checkbox"]:hover {
+	background-color: black;
+} */
+
+input[type="checkbox"]:checked {
+	background-color: aqua;
+}
+
+input[type="checkbox"]:checked:after {
+	display: block;
+}
+
+.make-teams-btn-flex {
+	display: flex;
+	justify-content: center;
+}
+
+.make-teams-btn {
+	font-size: 18px;
+	margin-top: 25px;
+	border: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	border-radius: 15px;
+	background-color: aqua;
+	cursor: pointer;
+	transition: 400ms;
+}
+
+.make-teams-btn:hover {
+	background-color: magenta;
+}
 /* end of team maker styling*/
