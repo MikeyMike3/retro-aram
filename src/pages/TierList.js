@@ -31,7 +31,7 @@ export const sTier = [
 export const aTier = [
 	{
 		name: "Shady",
-		img: require("../imgs/tier-list-img-placeholder.jpeg"),
+		img: require("../imgs/shady-disc.png"),
 		rank: "A",
 		id: "Shady",
 	},
