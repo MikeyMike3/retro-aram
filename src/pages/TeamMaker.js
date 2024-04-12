@@ -391,7 +391,9 @@ export const TeamMaker = () => {
 									fTierPoints
 								);
 							}
-						} else if (teamOne.length === teamTwo.length) {
+						} else if (
+							tempTeamOneArray.length === tempTeamTwoArray.length
+						) {
 							if (randomNumber === 1) {
 								const player = currentArray[j];
 								tempTeamOneArray = updateTeamOne(
