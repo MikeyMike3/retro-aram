@@ -139,11 +139,11 @@ export const TeamMaker = () => {
 		let tempTeamOneArray = [];
 		let tempTeamTwoArray = [];
 
-		const sTierPoints = 10;
-		const aTierPoints = 9;
-		const bTierPoints = 8;
-		const cTierPoints = 7;
-		const dTierPoints = 6;
+		const sTierPoints = 30;
+		const aTierPoints = 25;
+		const bTierPoints = 20;
+		const cTierPoints = 15;
+		const dTierPoints = 10;
 		const fTierPoints = 5;
 
 		let teamOneSTierCounter = 0;
