@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
 	annul,
 	blight,
@@ -35,6 +35,7 @@ const stasisRate = 15;
 const unboundRate = 15;
 
 let bootsRate = 100;
+let plexoMode = false;
 
 let tempItemArray = [];
 
@@ -77,6 +78,15 @@ const getNewItem = (array, rate) => {
 				lifelineManaflowOverlap = true;
 			}
 		}
+	}
+};
+
+const handlePlexoMode = (item) => {
+	plexoMode = !item;
+	if (plexoMode === true) {
+		bootsRate = 0;
+	} else {
+		bootsRate = 100;
 	}
 };
 
@@ -135,15 +145,68 @@ export const UltimateAram = () => {
 
 	return (
 		<div className="wrapper">
-			{itemArray.map((item) => (
-				<UltimateAramItems
-					key={item.itemName}
-					itemName={item.itemName}
-					img={item.img}
-					itemGroup={item.itemGroup}
-				/>
-			))}
-			<button onClick={makeRandomItems}>Randomize</button>
+			<div className="ultimate-aram-title glass">
+				<h3>
+					<span className="retro-span">Retro </span>
+					<span className="future-span">Future </span>
+					<span className="aram-span">Ultimate Aram</span>
+				</h3>
+			</div>
+
+			<div className="ultimate-aram-description glass">
+				<p>
+					<span className="aram-span">Ultimate Aram</span> will
+					<span className="randomize-span"> randomize</span> the items
+					you have to build in game.
+				</p>
+				<p>
+					First <span className="randomize-span">randomize</span> your
+					champs in game, then come here and randomize your items.
+				</p>
+				<p>You can build the items in any order you would like.</p>
+				<p>
+					The item <span className="randomize-span">randomizer </span>
+					is smart enough that it wont give you items that you can't
+					build.
+				</p>
+			</div>
+			<div className="ultimate-aram-item-container glass">
+				{itemArray.length === 0 && (
+					<div className="ultimate-aram-item-array-empty">
+						<h3>Click randomize below</h3>
+					</div>
+				)}
+
+				<div className="ultimate-aram-item-grid">
+					{itemArray.map((item) => (
+						<UltimateAramItems
+							key={item.itemName}
+							itemName={item.itemName}
+							img={item.img}
+							itemGroup={item.itemGroup}
+						/>
+					))}
+				</div>
+				<div className="ultimate-aram-btn-container">
+					<div className="idk-container">
+						<button
+							className="ultimate-aram-btn"
+							onClick={makeRandomItems}
+						>
+							Randomize
+						</button>
+						<div className="ultimate-aram-checkbox-container">
+							<input
+								onChange={() => handlePlexoMode(plexoMode)}
+								type="checkbox"
+							></input>
+							<label className="ultimate-aram-label">
+								Plexo Mode (No Boots)
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
