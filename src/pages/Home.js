@@ -13,8 +13,9 @@ export const Home = () => {
 				<p className="description">
 					This website is for all things{" "}
 					<span className="aram-span">Aram</span>. We have our own
-					ranked leaderboard, tier list and team maker, with more
-					features to come. Stay tuned.
+					Ranked Leaderboard, Tier List and Team Maker and Ultimate{" "}
+					<span className="aram-span">Aram</span> with more features
+					to come. Stay tuned.
 				</p>
 			</div>
 		</div>
