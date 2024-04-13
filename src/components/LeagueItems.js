@@ -252,12 +252,12 @@ export const stasis = [
 export const unbounded = [
 	{
 		itemName: "infinity Edge",
-		img: require("../imgs/lol-items/unbound/infinity-edge.PNG"),
+		img: require("../imgs/lol-items/unbounded/infinity-edge.PNG"),
 		itemGroup: "Unbounded",
 	},
 	{
 		itemName: "Navori Quickblades",
-		img: require("../imgs/lol-items/unbound/navori.PNG"),
+		img: require("../imgs/lol-items/unbounded/navori.PNG"),
 		itemGroup: "Unbounded",
 	},
 ];

@@ -5,6 +5,7 @@ import {
 	Route,
 	RouterProvider,
 } from "react-router-dom";
+
 import { AramRanks } from "./pages/AramRanks";
 import { RootLayouts } from "./layouts/RootLayouts";
 import { Home } from "./pages/Home";
