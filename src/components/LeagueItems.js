@@ -157,11 +157,11 @@ export const lifeline = [
 		img: require("../imgs/lol-items/lifeline/maw.PNG"),
 		itemGroup: "Lifeline",
 	},
-	{
-		itemName: "Seraph's Embrace",
-		img: require("../imgs/lol-items/lifeline/seraph.PNG"),
-		itemGroup: "Lifeline/Manaflow",
-	},
+	// {
+	// 	itemName: "Seraph's Embrace",
+	// 	img: require("../imgs/lol-items/lifeline/seraph.PNG"),
+	// 	itemGroup: "Lifeline/Manaflow",
+	// },
 	{
 		itemName: "Sterak's Gage",
 		img: require("../imgs/lol-items/lifeline/steraks.PNG"),
@@ -185,11 +185,11 @@ export const manaflow = [
 		img: require("../imgs/lol-items/manaflow/manamune.PNG"),
 		itemGroup: "Manaflow",
 	},
-	{
-		itemName: "Seraph's Embrace",
-		img: require("../imgs/lol-items/manaflow/seraph.PNG"),
-		itemGroup: "Lifeline/Manaflow",
-	},
+	// {
+	// 	itemName: "Seraph's Embrace",
+	// 	img: require("../imgs/lol-items/manaflow/seraph.PNG"),
+	// 	itemGroup: "Lifeline/Manaflow",
+	// },
 	{
 		itemName: "Winter's Approach",
 		img: require("../imgs/lol-items/manaflow/winters-approach.PNG"),
