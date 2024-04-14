@@ -135,6 +135,7 @@ ul {
 	padding: 25px;
 	margin-bottom: 25px;
 	color: white;
+	font-size: 20px;
 }
 
 .filter-key-container h3 {
@@ -354,6 +355,7 @@ hr {
 	background-color: rgba(36, 142, 212, 0.247);
 	border-radius: 15px;
 	padding: 15px;
+	font-size: 20px;
 }
 
 .team-maker-description p {
@@ -559,6 +561,7 @@ input[type="checkbox"]:checked:after {
 	background-color: rgba(36, 142, 212, 0.247);
 	border-radius: 15px;
 	padding: 15px;
+	font-size: 20px;
 }
 
 .randomize-span {
