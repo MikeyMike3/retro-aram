@@ -202,8 +202,12 @@ export const UltimateAram = () => {
 							<input
 								onChange={() => handlePlexoMode(plexoMode)}
 								type="checkbox"
+								id="plexoCheckbox"
 							></input>
-							<label className="ultimate-aram-label">
+							<label
+								htmlFor="plexoCheckbox"
+								className="ultimate-aram-label"
+							>
 								Plexo Mode (No Boots)
 							</label>
 						</div>
