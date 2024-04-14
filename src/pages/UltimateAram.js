@@ -20,19 +20,19 @@ import { UltimateAramItems } from "../components/UltimateAramItems";
 
 // sets the chance of each item group chance out of 100 (if the number is 15 then theres a 15% chance of a item of that group gets added)
 
-const annulRate = 0;
-const blightRate = 0;
-const eternityRate = 0;
-const fatalityRate = 0;
-const hydraRate = 0;
-const immolateRate = 0;
-const lifelineRate = 100;
-const manaflowRate = 100;
-const momentumRate = 0;
-const quicksilverRate = 0;
-const spellbladeRate = 0;
-const stasisRate = 0;
-const unboundRate = 0;
+const annulRate = 15;
+const blightRate = 15;
+const eternityRate = 15;
+const fatalityRate = 15;
+const hydraRate = 15;
+const immolateRate = 15;
+const lifelineRate = 15;
+const manaflowRate = 15;
+const momentumRate = 15;
+const quicksilverRate = 15;
+const spellbladeRate = 15;
+const stasisRate = 15;
+const unboundRate = 15;
 
 let bootsRate = 100;
 
