@@ -22,7 +22,7 @@ export const blight = [
 	{
 		itemName: "Terminus",
 		img: require("../imgs/lol-items/blight/terminus.PNG"),
-		itemGroup: "Blight",
+		itemGroup: "Fatality/Blight",
 	},
 	{
 		itemName: "Void Staff",
@@ -101,7 +101,7 @@ export const fatality = [
 	{
 		itemName: "Terminus",
 		img: require("../imgs/lol-items/fatality/terminus.PNG"),
-		itemGroup: "Fatality",
+		itemGroup: "Fatality/Blight",
 	},
 ];
 
@@ -145,7 +145,7 @@ export const lifeline = [
 	{
 		itemName: "Archangel's Staff",
 		img: require("../imgs/lol-items/lifeline/archangel.PNG"),
-		itemGroup: "Lifeline",
+		itemGroup: "Lifeline/Manaflow",
 	},
 	{
 		itemName: "Immortal Shieldbow",
@@ -160,7 +160,7 @@ export const lifeline = [
 	{
 		itemName: "Seraph's Embrace",
 		img: require("../imgs/lol-items/lifeline/seraph.PNG"),
-		itemGroup: "Lifeline",
+		itemGroup: "Lifeline/Manaflow",
 	},
 	{
 		itemName: "Sterak's Gage",
@@ -173,7 +173,7 @@ export const manaflow = [
 	{
 		itemName: "Archangel' Staff",
 		img: require("../imgs/lol-items/manaflow/archangel.PNG"),
-		itemGroup: "Manaflow",
+		itemGroup: "Lifeline/Manaflow",
 	},
 	{
 		itemName: "Fimbulwinter",
@@ -188,7 +188,7 @@ export const manaflow = [
 	{
 		itemName: "Seraph's Embrace",
 		img: require("../imgs/lol-items/manaflow/seraph.PNG"),
-		itemGroup: "Manaflow",
+		itemGroup: "Lifeline/Manaflow",
 	},
 	{
 		itemName: "Winter's Approach",
