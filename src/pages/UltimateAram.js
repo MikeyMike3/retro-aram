@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	annul,
 	blight,
@@ -35,7 +35,6 @@ const stasisRate = 15;
 const unboundRate = 15;
 
 let bootsRate = 100;
-let plexoMode = false;
 
 let tempItemArray = [];
 
@@ -81,17 +80,21 @@ const getNewItem = (array, rate) => {
 	}
 };
 
-const handlePlexoMode = (item) => {
-	plexoMode = !item;
-	if (plexoMode === true) {
-		bootsRate = 0;
-	} else {
-		bootsRate = 100;
-	}
-};
-
 export const UltimateAram = () => {
 	const [itemArray, setItemArray] = useState([]);
+	const [plexoMode, setPlexoMode] = useState(false);
+
+	const handlePlexoMode = (item) => {
+		setPlexoMode(!item);
+	};
+
+	useEffect(() => {
+		if (plexoMode) {
+			bootsRate = 0;
+		} else {
+			bootsRate = 100;
+		}
+	}, [plexoMode]);
 
 	const makeRandomItems = () => {
 		tempItemArray = [];
