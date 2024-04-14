@@ -171,7 +171,7 @@ export const lifeline = [
 
 export const manaflow = [
 	{
-		itemName: "Archangel' Staff",
+		itemName: "Archangel's Staff",
 		img: require("../imgs/lol-items/manaflow/archangel.PNG"),
 		itemGroup: "Lifeline/Manaflow",
 	},

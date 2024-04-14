@@ -20,19 +20,19 @@ import { UltimateAramItems } from "../components/UltimateAramItems";
 
 // sets the chance of each item group chance out of 100 (if the number is 15 then theres a 15% chance of a item of that group gets added)
 
-const annulRate = 15;
-const blightRate = 15;
-const eternityRate = 15;
-const fatalityRate = 15;
-const hydraRate = 15;
-const immolateRate = 15;
-const lifelineRate = 15;
-const manaflowRate = 15;
-const momentumRate = 15;
-const quicksilverRate = 15;
-const spellbladeRate = 15;
-const stasisRate = 15;
-const unboundRate = 15;
+const annulRate = 0;
+const blightRate = 0;
+const eternityRate = 0;
+const fatalityRate = 0;
+const hydraRate = 0;
+const immolateRate = 0;
+const lifelineRate = 100;
+const manaflowRate = 100;
+const momentumRate = 0;
+const quicksilverRate = 0;
+const spellbladeRate = 0;
+const stasisRate = 0;
+const unboundRate = 0;
 
 let bootsRate = 100;
 
@@ -40,8 +40,9 @@ let tempItemArray = [];
 
 let terminusOverlap = false;
 let archAngelStaffOverlap = false;
-let seraphsEmbraceOverlap = false;
 let lifelineManaflowOverlap = false;
+
+let archAngelStaffOverlapToggledOff = false;
 
 let randomNumber100 = 0;
 let randomNumberDynamic = 0;
@@ -64,20 +65,33 @@ const getNewItem = (array, rate) => {
 			if (array[randomNumberDynamic].itemName === "Terminus") {
 				terminusOverlap = true;
 			} else if (
-				array[randomNumberDynamic].itemName === "Archangel's Staff"
+				array[randomNumberDynamic].itemName === "Archangel's Staff" ||
+				array[randomNumberDynamic].itemName === "Immortal Shieldbow" ||
+				array[randomNumberDynamic].itemName === "Maw of Malmortius" ||
+				array[randomNumberDynamic].itemName === "Sterak's Gage"
 			) {
-				archAngelStaffOverlap = true;
-			} else if (
-				array[randomNumberDynamic].itemName === "Seraph's Embrace"
-			) {
-				seraphsEmbraceOverlap = true;
-			}
-
-			if (archAngelStaffOverlap || seraphsEmbraceOverlap) {
 				lifelineManaflowOverlap = true;
 			}
+			if (array[randomNumberDynamic].itemName === "Archangel's Staff") {
+				archAngelStaffOverlap = true;
+			}
+
+			// if (archAngelStaffOverlap) {
+			// 	archAngelStaffOverlapToggledOff = false;
+			// }
+			//  else if (
+			// 	array[randomNumberDynamic].itemName === "Seraph's Embrace"
+			// ) {
+			// 	seraphsEmbraceOverlap = true;
+			// }
+
+			// if (archAngelStaffOverlap || seraphsEmbraceOverlap) {
+			// 	lifelineManaflowOverlap = true;
+			// }
 		}
 	}
+
+	return tempItemArray;
 };
 
 export const UltimateAram = () => {
@@ -101,7 +115,9 @@ export const UltimateAram = () => {
 
 		terminusOverlap = false;
 		archAngelStaffOverlap = false;
-		seraphsEmbraceOverlap = false;
+
+		archAngelStaffOverlapToggledOff = false;
+
 		lifelineManaflowOverlap = false;
 
 		getNewItem(boots, bootsRate);
@@ -122,8 +138,27 @@ export const UltimateAram = () => {
 
 		getNewItem(lifeline, lifelineRate);
 
-		if (!lifelineManaflowOverlap) {
+		if (!archAngelStaffOverlap) {
 			getNewItem(manaflow, manaflowRate);
+			archAngelStaffOverlapToggledOff = true;
+		}
+
+		if (lifelineManaflowOverlap && archAngelStaffOverlapToggledOff) {
+			while (true) {
+				let lastIndex = tempItemArray.length - 1;
+
+				console.log(lastIndex);
+				console.log(tempItemArray[lastIndex].itemName);
+
+				if (tempItemArray[lastIndex].itemName === "Archangel's Staff") {
+					console.log("POPPED", tempItemArray[lastIndex].itemName);
+					tempItemArray.pop();
+
+					getNewItem(manaflow, manaflowRate);
+				} else {
+					break;
+				}
+			}
 		}
 
 		getNewItem(momentum, momentumRate);
