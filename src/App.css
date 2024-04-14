@@ -6,11 +6,17 @@
 }
 
 body {
-	background-image: url(imgs/retro-future-background-4.PNG);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment: fixed;
 	background-color: black;
+}
+
+#bgVideo {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1; /* Ensures the video stays behind other content */
+	object-fit: cover;
 }
 
 .wrapper {
