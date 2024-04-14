@@ -517,220 +517,202 @@ export const TeamMaker = () => {
 	// }, [teamTwo]);
 
 	return (
-		<>
-			<video
-				src="video/retro-aram-video-1.mp4"
-				autoPlay
-				loop
-				muted
-				id="bgVideo"
-			></video>
-			<div className="wrapper">
-				<div className="team-maker-title glass">
-					<h3>
-						<span className="retro-span">Retro </span>
-						<span className="future-span">Future</span> Team Maker
-					</h3>
-				</div>
+		<div className="wrapper">
+			<div className="team-maker-title glass">
+				<h3>
+					<span className="retro-span">Retro </span>
+					<span className="future-span">Future</span> Team Maker
+				</h3>
+			</div>
 
-				<div className="team-maker-description glass">
-					<p>
-						The <span className="team-maker-span">Team Maker</span>{" "}
-						will make the teams as balanced as possible.
-					</p>
-					<p>
-						Select the people who are playing then click "Make
-						Teams".
-					</p>
-					<p>
-						The{" "}
-						<span className="team-rating-span">Team Rating</span>{" "}
-						for each team determines how balanced the teams are.
-					</p>
-					<p>
-						The closer the{" "}
-						<span className="team-rating-span">Team Rating</span>{" "}
-						numbers are to each other the more balanced the teams
-						are.
-					</p>
-				</div>
+			<div className="team-maker-description glass">
+				<p>
+					The <span className="team-maker-span">Team Maker</span> will
+					make the teams as balanced as possible.
+				</p>
+				<p>
+					Select the people who are playing then click "Make Teams".
+				</p>
+				<p>
+					The <span className="team-rating-span">Team Rating</span>{" "}
+					for each team determines how balanced the teams are.
+				</p>
+				<p>
+					The closer the{" "}
+					<span className="team-rating-span">Team Rating</span>{" "}
+					numbers are to each other the more balanced the teams are.
+				</p>
+			</div>
 
-				<div className="team-maker-grid">
-					<div className="team-maker-container team-maker-checkboxes-container glass">
-						<h3>S Tier</h3>
-						{sTier.map((item) => {
-							return (
-								<div key={item.id} className="checkbox-wrapper">
-									<input
-										type="checkbox"
-										id={`checkbox_${item.id}`}
-										checked={sTierState.some(
-											(selectedSTierPlayer) =>
-												selectedSTierPlayer.id ===
-												item.id
-										)}
-										onChange={() =>
-											handleSTierStateChange(item)
-										}
-									/>
-									<label htmlFor={`checkbox_${item.id}`}>
-										{item.name}
-									</label>
-								</div>
-							);
-						})}
+			<div className="team-maker-grid">
+				<div className="team-maker-container team-maker-checkboxes-container glass">
+					<h3>S Tier</h3>
+					{sTier.map((item) => {
+						return (
+							<div key={item.id} className="checkbox-wrapper">
+								<input
+									type="checkbox"
+									id={`checkbox_${item.id}`}
+									checked={sTierState.some(
+										(selectedSTierPlayer) =>
+											selectedSTierPlayer.id === item.id
+									)}
+									onChange={() =>
+										handleSTierStateChange(item)
+									}
+								/>
+								<label htmlFor={`checkbox_${item.id}`}>
+									{item.name}
+								</label>
+							</div>
+						);
+					})}
 
-						<h3>A Tier</h3>
-						{aTier.map((item) => {
-							return (
-								<div key={item.id} className="checkbox-wrapper">
-									<input
-										type="checkbox"
-										id={`checkbox_${item.id}`}
-										checked={aTierState.some(
-											(selectedATierPlayer) =>
-												selectedATierPlayer.id ===
-												item.id
-										)}
-										onChange={() =>
-											handleATierStateChange(item)
-										}
-									/>
-									<label htmlFor={`checkbox_${item.id}`}>
-										{item.name}
-									</label>
-								</div>
-							);
-						})}
-						<h3>B Tier</h3>
-						{bTier.map((item) => {
-							return (
-								<div key={item.id} className="checkbox-wrapper">
-									<input
-										type="checkbox"
-										id={`checkbox_${item.id}`}
-										checked={bTierState.some(
-											(selectedBTierPlayer) =>
-												selectedBTierPlayer.id ===
-												item.id
-										)}
-										onChange={() =>
-											handleBTierStateChange(item)
-										}
-									/>
-									<label htmlFor={`checkbox_${item.id}`}>
-										{item.name}
-									</label>
-								</div>
-							);
-						})}
-						<h3>C Tier</h3>
-						{cTier.map((item) => {
-							return (
-								<div key={item.id} className="checkbox-wrapper">
-									<input
-										type="checkbox"
-										id={`checkbox_${item.id}`}
-										checked={cTierState.some(
-											(selectedCTierPlayer) =>
-												selectedCTierPlayer.id ===
-												item.id
-										)}
-										onChange={() =>
-											handleCTierStateChange(item)
-										}
-									/>
-									<label htmlFor={`checkbox_${item.id}`}>
-										{item.name}
-									</label>
-								</div>
-							);
-						})}
-						<h3>D Tier</h3>
-						{dTier.map((item) => {
-							return (
-								<div key={item.id} className="checkbox-wrapper">
-									<input
-										type="checkbox"
-										id={`checkbox_${item.id}`}
-										checked={dTierState.some(
-											(selectedDTierPlayer) =>
-												selectedDTierPlayer.id ===
-												item.id
-										)}
-										onChange={() =>
-											handleDTierStateChange(item)
-										}
-									/>
-									<label htmlFor={`checkbox_${item.id}`}>
-										{item.name}
-									</label>
-								</div>
-							);
-						})}
-						<h3>F Tier</h3>
-						{fTier.map((item) => {
-							return (
-								<div key={item.id} className="checkbox-wrapper">
-									<input
-										type="checkbox"
-										id={`checkbox_${item.id}`}
-										checked={fTierState.some(
-											(selectedFTierPlayer) =>
-												selectedFTierPlayer.id ===
-												item.id
-										)}
-										onChange={() =>
-											handleFTierStateChange(item)
-										}
-									/>
-									<label htmlFor={`checkbox_${item.id}`}>
-										{item.name}
-									</label>
-								</div>
-							);
-						})}
+					<h3>A Tier</h3>
+					{aTier.map((item) => {
+						return (
+							<div key={item.id} className="checkbox-wrapper">
+								<input
+									type="checkbox"
+									id={`checkbox_${item.id}`}
+									checked={aTierState.some(
+										(selectedATierPlayer) =>
+											selectedATierPlayer.id === item.id
+									)}
+									onChange={() =>
+										handleATierStateChange(item)
+									}
+								/>
+								<label htmlFor={`checkbox_${item.id}`}>
+									{item.name}
+								</label>
+							</div>
+						);
+					})}
+					<h3>B Tier</h3>
+					{bTier.map((item) => {
+						return (
+							<div key={item.id} className="checkbox-wrapper">
+								<input
+									type="checkbox"
+									id={`checkbox_${item.id}`}
+									checked={bTierState.some(
+										(selectedBTierPlayer) =>
+											selectedBTierPlayer.id === item.id
+									)}
+									onChange={() =>
+										handleBTierStateChange(item)
+									}
+								/>
+								<label htmlFor={`checkbox_${item.id}`}>
+									{item.name}
+								</label>
+							</div>
+						);
+					})}
+					<h3>C Tier</h3>
+					{cTier.map((item) => {
+						return (
+							<div key={item.id} className="checkbox-wrapper">
+								<input
+									type="checkbox"
+									id={`checkbox_${item.id}`}
+									checked={cTierState.some(
+										(selectedCTierPlayer) =>
+											selectedCTierPlayer.id === item.id
+									)}
+									onChange={() =>
+										handleCTierStateChange(item)
+									}
+								/>
+								<label htmlFor={`checkbox_${item.id}`}>
+									{item.name}
+								</label>
+							</div>
+						);
+					})}
+					<h3>D Tier</h3>
+					{dTier.map((item) => {
+						return (
+							<div key={item.id} className="checkbox-wrapper">
+								<input
+									type="checkbox"
+									id={`checkbox_${item.id}`}
+									checked={dTierState.some(
+										(selectedDTierPlayer) =>
+											selectedDTierPlayer.id === item.id
+									)}
+									onChange={() =>
+										handleDTierStateChange(item)
+									}
+								/>
+								<label htmlFor={`checkbox_${item.id}`}>
+									{item.name}
+								</label>
+							</div>
+						);
+					})}
+					<h3>F Tier</h3>
+					{fTier.map((item) => {
+						return (
+							<div key={item.id} className="checkbox-wrapper">
+								<input
+									type="checkbox"
+									id={`checkbox_${item.id}`}
+									checked={fTierState.some(
+										(selectedFTierPlayer) =>
+											selectedFTierPlayer.id === item.id
+									)}
+									onChange={() =>
+										handleFTierStateChange(item)
+									}
+								/>
+								<label htmlFor={`checkbox_${item.id}`}>
+									{item.name}
+								</label>
+							</div>
+						);
+					})}
 
-						<div className="make-teams-btn-flex">
-							<button
-								className="make-teams-btn"
-								onClick={handleGenerateClick}
-							>
-								Make Teams
-							</button>
-						</div>
+					<div className="make-teams-btn-flex">
+						<button
+							className="make-teams-btn"
+							onClick={handleGenerateClick}
+						>
+							Make Teams
+						</button>
 					</div>
+				</div>
 
-					<div className="team-maker-container glass">
-						<div className="teams-grid">
-							<div className="team-one">
-								<h3>Team 1</h3>
-								<h4>Team Rating: {teamOneRating}</h4>
-								{teamOne.map((item) => (
-									<TeamMakerPlayer
-										key={item.id}
-										name={item.name}
-										img={item.img}
-										rank={item.rank}
-									/>
-								))}
-							</div>
-							<div className="team-two">
-								<h3>Team 2</h3>
-								<h4>Team rating: {teamTwoRating}</h4>
-								{teamTwo.map((item) => (
-									<TeamMakerPlayer
-										key={item.id}
-										name={item.name}
-										img={item.img}
-										rank={item.rank}
-									/>
-								))}
-							</div>
+				<div className="team-maker-container glass">
+					<div className="teams-grid">
+						<div className="team-one">
+							<h3>Team 1</h3>
+							<h4>Team Rating: {teamOneRating}</h4>
+							{teamOne.map((item) => (
+								<TeamMakerPlayer
+									key={item.id}
+									name={item.name}
+									img={item.img}
+									rank={item.rank}
+								/>
+							))}
+						</div>
+						<div className="team-two">
+							<h3>Team 2</h3>
+							<h4>Team rating: {teamTwoRating}</h4>
+							{teamTwo.map((item) => (
+								<TeamMakerPlayer
+									key={item.id}
+									name={item.name}
+									img={item.img}
+									rank={item.rank}
+								/>
+							))}
 						</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };

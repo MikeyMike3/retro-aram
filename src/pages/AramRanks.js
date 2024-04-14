@@ -380,119 +380,103 @@ export const AramRanks = () => {
 	const gridBtnClassNames = "end grid-btn";
 
 	return (
-		<>
-			<video
-				src="video/retro-aram-video-1.mp4"
-				autoPlay
-				loop
-				muted
-				id="bgVideo"
-			></video>
-			<div className="wrapper">
-				<h1 className="aram-rankings-title glass">
-					<span className="retro-span">Retro </span>
-					<span className="future-span">Future </span>
-					<span className="aram-span">Aram </span>
-					<span className="rankings-span">Rankings</span>
-				</h1>
+		<div className="wrapper">
+			<h1 className="aram-rankings-title glass">
+				<span className="retro-span">Retro </span>
+				<span className="future-span">Future </span>
+				<span className="aram-span">Aram </span>
+				<span className="rankings-span">Rankings</span>
+			</h1>
 
-				<div className="filter-key-container glass">
-					<h3>
-						<span className="rankings-span">Rankings</span> Filter
-						Key
-					</h3>
-					<p className="ascending-key">
-						<span>Ascending</span> order(Lowest to Highest).
-					</p>
-					<p className="reverse-ascending-key">
-						<span>Descending</span> order(Highest to Lowest).
-					</p>
-					<p className="reverse-ascending-key">
-						1 click for <span>descending</span> order.
-					</p>
-					<p className="ascending-key">
-						2 clicks for <span>ascending</span> order.
-					</p>
-					<p>Click the stat labels below to sort.</p>
-				</div>
+			<div className="filter-key-container glass">
+				<h3>
+					<span className="rankings-span">Rankings</span> Filter Key
+				</h3>
+				<p className="ascending-key">
+					<span>Ascending</span> order(Lowest to Highest).
+				</p>
+				<p className="reverse-ascending-key">
+					<span>Descending</span> order(Highest to Lowest).
+				</p>
+				<p className="reverse-ascending-key">
+					1 click for <span>descending</span> order.
+				</p>
+				<p className="ascending-key">
+					2 clicks for <span>ascending</span> order.
+				</p>
+				<p>Click the stat labels below to sort.</p>
+			</div>
 
-				<div className="hero-container">
-					<div className="ranks-container glass">
-						<div className="player-grid grid-key">
-							<h4>Name</h4>
-							<button
-								className={`${gridBtnClassNames} ${
-									winsClickCounter === 1
-										? "reverse-ascending"
-										: ""
-								} ${winsClickCounter === 2 ? "ascending" : ""}`}
-								onClick={handleClickWins}
-							>
-								Wins
-							</button>
-							<button
-								className={`${gridBtnClassNames} ${
-									lossesClickCounter === 1
-										? "reverse-ascending"
-										: ""
-								} ${
-									lossesClickCounter === 2 ? "ascending" : ""
-								}`}
-								onClick={handleClickLosses}
-							>
-								Losses
-							</button>
-							<button
-								className={`${gridBtnClassNames} ${
-									totalGamesPlayedClickCounter === 1
-										? "reverse-ascending"
-										: ""
-								} ${
-									totalGamesPlayedClickCounter === 2
-										? "ascending"
-										: ""
-								}`}
-								onClick={handleClickTotalGamesPlayed}
-							>
-								Games Played
-							</button>
-							<button
-								className={`${gridBtnClassNames} ${
-									winRateClickCounter === 1
-										? "reverse-ascending"
-										: ""
-								} ${
-									winRateClickCounter === 2 ? "ascending" : ""
-								}`}
-								onClick={handleClickWinRate}
-							>
-								Win Rate
-							</button>
-							<button
-								className={`${gridBtnClassNames} ${
-									mmrClickCounter === 1
-										? "reverse-ascending"
-										: ""
-								} ${mmrClickCounter === 2 ? "ascending" : ""}`}
-								onClick={handleClickMmr}
-							>
-								MMR
-							</button>
-						</div>
-						{displayRanks.map((item) => (
-							<Player
-								key={item.name}
-								name={item.name}
-								wins={item.wins}
-								losses={item.losses}
-								totalGamesPlayed={item.totalGamesPlayed}
-								winRate={item.winRate}
-								mmr={item.mmr}
-							/>
-						))}
+			<div className="hero-container">
+				<div className="ranks-container glass">
+					<div className="player-grid grid-key">
+						<h4>Name</h4>
+						<button
+							className={`${gridBtnClassNames} ${
+								winsClickCounter === 1
+									? "reverse-ascending"
+									: ""
+							} ${winsClickCounter === 2 ? "ascending" : ""}`}
+							onClick={handleClickWins}
+						>
+							Wins
+						</button>
+						<button
+							className={`${gridBtnClassNames} ${
+								lossesClickCounter === 1
+									? "reverse-ascending"
+									: ""
+							} ${lossesClickCounter === 2 ? "ascending" : ""}`}
+							onClick={handleClickLosses}
+						>
+							Losses
+						</button>
+						<button
+							className={`${gridBtnClassNames} ${
+								totalGamesPlayedClickCounter === 1
+									? "reverse-ascending"
+									: ""
+							} ${
+								totalGamesPlayedClickCounter === 2
+									? "ascending"
+									: ""
+							}`}
+							onClick={handleClickTotalGamesPlayed}
+						>
+							Games Played
+						</button>
+						<button
+							className={`${gridBtnClassNames} ${
+								winRateClickCounter === 1
+									? "reverse-ascending"
+									: ""
+							} ${winRateClickCounter === 2 ? "ascending" : ""}`}
+							onClick={handleClickWinRate}
+						>
+							Win Rate
+						</button>
+						<button
+							className={`${gridBtnClassNames} ${
+								mmrClickCounter === 1 ? "reverse-ascending" : ""
+							} ${mmrClickCounter === 2 ? "ascending" : ""}`}
+							onClick={handleClickMmr}
+						>
+							MMR
+						</button>
 					</div>
+					{displayRanks.map((item) => (
+						<Player
+							key={item.name}
+							name={item.name}
+							wins={item.wins}
+							losses={item.losses}
+							totalGamesPlayed={item.totalGamesPlayed}
+							winRate={item.winRate}
+							mmr={item.mmr}
+						/>
+					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };

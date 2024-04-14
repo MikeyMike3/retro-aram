@@ -105,85 +105,76 @@ export const fTier = [
 
 export const TierList = () => {
 	return (
-		<>
-			<video
-				src="video/retro-aram-video-1.mp4"
-				autoPlay
-				loop
-				muted
-				id="bgVideo"
-			></video>
-			<div className="wrapper">
-				<h3 className="tier-list-title glass">
-					<span className="retro-span">Retro </span>
-					<span className="future-span">Future </span>
-					Tier List
-				</h3>
-				<div className="tier-list-grid-container ">
-					<div className="letter-rank-tier rank-tier-list-top glass">
-						S
-					</div>
-					<div className="tier-list-column-two-grid tier-list-column-two-grid-top glass">
-						{sTier.map((item) => (
-							<TierListPlayer
-								key={item.name}
-								name={item.name}
-								img={item.img}
-							/>
-						))}
-					</div>
-					<div className="letter-rank-tier glass">A</div>
-					<div className="tier-list-column-two-grid glass">
-						{aTier.map((item) => (
-							<TierListPlayer
-								key={item.name}
-								name={item.name}
-								img={item.img}
-							/>
-						))}
-					</div>
-					<div className="letter-rank-tier glass">B</div>
-					<div className="tier-list-column-two-grid glass">
-						{bTier.map((item) => (
-							<TierListPlayer
-								key={item.name}
-								name={item.name}
-								img={item.img}
-							/>
-						))}
-					</div>
-					<div className="letter-rank-tier glass">C</div>
-					<div className="tier-list-column-two-grid glass">
-						{cTier.map((item) => (
-							<TierListPlayer
-								key={item.name}
-								name={item.name}
-								img={item.img}
-							/>
-						))}
-					</div>
-					<div className="letter-rank-tier glass">D</div>
-					<div className="tier-list-column-two-grid glass">
-						{dTier.map((item) => (
-							<TierListPlayer
-								key={item.name}
-								name={item.name}
-								img={item.img}
-							/>
-						))}
-					</div>
-					<div className="letter-rank-tier glass">F</div>
-					<div className="tier-list-column-two-grid glass">
-						{fTier.map((item) => (
-							<TierListPlayer
-								key={item.name}
-								name={item.name}
-								img={item.img}
-							/>
-						))}
-					</div>
+		<div className="wrapper">
+			<h3 className="tier-list-title glass">
+				<span className="retro-span">Retro </span>
+				<span className="future-span">Future </span>
+				Tier List
+			</h3>
+			<div className="tier-list-grid-container ">
+				<div className="letter-rank-tier rank-tier-list-top glass">
+					S
+				</div>
+				<div className="tier-list-column-two-grid tier-list-column-two-grid-top glass">
+					{sTier.map((item) => (
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
+					))}
+				</div>
+				<div className="letter-rank-tier glass">A</div>
+				<div className="tier-list-column-two-grid glass">
+					{aTier.map((item) => (
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
+					))}
+				</div>
+				<div className="letter-rank-tier glass">B</div>
+				<div className="tier-list-column-two-grid glass">
+					{bTier.map((item) => (
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
+					))}
+				</div>
+				<div className="letter-rank-tier glass">C</div>
+				<div className="tier-list-column-two-grid glass">
+					{cTier.map((item) => (
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
+					))}
+				</div>
+				<div className="letter-rank-tier glass">D</div>
+				<div className="tier-list-column-two-grid glass">
+					{dTier.map((item) => (
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
+					))}
+				</div>
+				<div className="letter-rank-tier glass">F</div>
+				<div className="tier-list-column-two-grid glass">
+					{fTier.map((item) => (
+						<TierListPlayer
+							key={item.name}
+							name={item.name}
+							img={item.img}
+						/>
+					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };

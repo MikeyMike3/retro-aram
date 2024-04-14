@@ -44,6 +44,13 @@ export const RootLayouts = () => {
 				</div>
 			</header>
 			<main>
+				<video
+					src="video/retro-aram-video-1.mp4"
+					autoPlay
+					loop
+					muted
+					id="bgVideo"
+				></video>
 				<Outlet />
 			</main>
 		</>

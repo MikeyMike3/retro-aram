@@ -147,84 +147,73 @@ export const UltimateAram = () => {
 	};
 
 	return (
-		<>
-			<video
-				src="video/retro-aram-video-1.mp4"
-				autoPlay
-				loop
-				muted
-				id="bgVideo"
-			></video>
-			<div className="wrapper">
-				<div className="ultimate-aram-title glass">
-					<h3>
-						<span className="retro-span">Retro </span>
-						<span className="future-span">Future </span>
-						<span className="aram-span">Ultimate Aram</span>
-					</h3>
-				</div>
+		<div className="wrapper">
+			<div className="ultimate-aram-title glass">
+				<h3>
+					<span className="retro-span">Retro </span>
+					<span className="future-span">Future </span>
+					<span className="aram-span">Ultimate Aram</span>
+				</h3>
+			</div>
 
-				<div className="ultimate-aram-description glass">
-					<p>
-						<span className="aram-span">Ultimate Aram</span> will
-						<span className="randomize-span"> randomize</span> the
-						items you have to build in game.
-					</p>
-					<p>
-						First <span className="randomize-span">randomize</span>{" "}
-						your champs in game, then come here and randomize your
-						items.
-					</p>
-					<p>You can build the items in any order you would like.</p>
-					<p>
-						The item{" "}
-						<span className="randomize-span">randomizer </span>
-						is smart enough that it wont give you items that you
-						can't build.
-					</p>
-				</div>
-				<div className="ultimate-aram-item-container glass">
-					{itemArray.length === 0 && (
-						<div className="ultimate-aram-item-array-empty">
-							<h3>Click randomize below</h3>
-						</div>
-					)}
-
-					<div className="ultimate-aram-item-grid">
-						{itemArray.map((item) => (
-							<UltimateAramItems
-								key={item.itemName}
-								itemName={item.itemName}
-								img={item.img}
-								itemGroup={item.itemGroup}
-							/>
-						))}
+			<div className="ultimate-aram-description glass">
+				<p>
+					<span className="aram-span">Ultimate Aram</span> will
+					<span className="randomize-span"> randomize</span> the items
+					you have to build in game.
+				</p>
+				<p>
+					First <span className="randomize-span">randomize</span> your
+					champs in game, then come here and randomize your items.
+				</p>
+				<p>You can build the items in any order you would like.</p>
+				<p>
+					The item <span className="randomize-span">randomizer </span>
+					is smart enough that it wont give you items that you can't
+					build.
+				</p>
+			</div>
+			<div className="ultimate-aram-item-container glass">
+				{itemArray.length === 0 && (
+					<div className="ultimate-aram-item-array-empty">
+						<h3>Click randomize below</h3>
 					</div>
-					<div className="ultimate-aram-btn-container">
-						<div className="idk-container">
-							<button
-								className="ultimate-aram-btn"
-								onClick={makeRandomItems}
+				)}
+
+				<div className="ultimate-aram-item-grid">
+					{itemArray.map((item) => (
+						<UltimateAramItems
+							key={item.itemName}
+							itemName={item.itemName}
+							img={item.img}
+							itemGroup={item.itemGroup}
+						/>
+					))}
+				</div>
+				<div className="ultimate-aram-btn-container">
+					<div className="idk-container">
+						<button
+							className="ultimate-aram-btn"
+							onClick={makeRandomItems}
+						>
+							Randomize
+						</button>
+						<div className="ultimate-aram-checkbox-container">
+							<input
+								onChange={() => handlePlexoMode(plexoMode)}
+								type="checkbox"
+								id="plexoCheckbox"
+							></input>
+							<label
+								htmlFor="plexoCheckbox"
+								className="ultimate-aram-label"
 							>
-								Randomize
-							</button>
-							<div className="ultimate-aram-checkbox-container">
-								<input
-									onChange={() => handlePlexoMode(plexoMode)}
-									type="checkbox"
-									id="plexoCheckbox"
-								></input>
-								<label
-									htmlFor="plexoCheckbox"
-									className="ultimate-aram-label"
-								>
-									Plexo Mode (No Boots)
-								</label>
-							</div>
+								Plexo Mode (No Boots)
+							</label>
 						</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
