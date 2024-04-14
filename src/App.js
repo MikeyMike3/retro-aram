@@ -17,8 +17,8 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayouts />}>
 			<Route index element={<Home />}></Route>
-			<Route path="rankings" element={<AramRanks />}></Route>
 			<Route path="tier-list" element={<TierList />}></Route>
+			<Route path="rankings" element={<AramRanks />}></Route>
 			<Route path="team-maker" element={<TeamMaker />}></Route>
 			<Route path="ultimate-aram" element={<UltimateAram />}></Route>
 		</Route>

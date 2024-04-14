@@ -23,10 +23,10 @@ export const RootLayouts = () => {
 									<NavLink to="/">Home</NavLink>
 								</li>
 								<li>
-									<NavLink to="rankings">Rankings</NavLink>
+									<NavLink to="tier-list">Tier List</NavLink>
 								</li>
 								<li>
-									<NavLink to="tier-list">Tier List</NavLink>
+									<NavLink to="rankings">Rankings</NavLink>
 								</li>
 								<li>
 									<NavLink to="team-maker">
