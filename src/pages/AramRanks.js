@@ -523,12 +523,12 @@ export const AramRanks = () => {
 
 	return (
 		<div className="wrapper">
-			<h1 className="aram-rankings-title glass">
+			<h3 className="aram-rankings-title glass">
 				<span className="retro-span">Retro </span>
 				<span className="future-span">Future </span>
 				<span className="aram-span">Aram </span>
 				<span className="rankings-span">Rankings</span>
-			</h1>
+			</h3>
 
 			<div className="filter-key-container glass">
 				<h3>

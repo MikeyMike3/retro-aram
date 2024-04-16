@@ -660,6 +660,10 @@ input[type="checkbox"]:checked:after {
 	border-radius: 15px;
 }
 
+.ultimate-aram-item-card h3 {
+	font-size: 18px;
+}
+
 .ultimate-aram-btn-container {
 	display: flex;
 	justify-content: center;
@@ -756,14 +760,143 @@ input[type="checkbox"]:checked:after {
 		background: url(imgs/icon-close.svg);
 		background-repeat: no-repeat;
 	}
+	.welcome,
+	.aram-rankings-title,
+	.tier-list-title,
+	h3 {
+		font-size: 40px;
+	}
+
+	.filter-key-container h3 {
+		font-size: 24px;
+	}
+
+	.description {
+		padding: 25px;
+	}
+
+	p {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 1250px) {
 	.wrapper {
 		max-width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	/* .ultimate-aram-item-grid {
-		display: grid;
+	.ultimate-aram-item-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 885px) {
+	.team-maker-grid {
 		grid-template-columns: 1fr;
-	} */
+	}
+
+	.teams-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.team-maker-container h3 {
+		font-size: 24px;
+	}
+
+	.team-maker-player-flex h1 {
+		font-size: 24px;
+	}
+	.team-one {
+		border: 0;
+	}
+	.team-two {
+		border: 0;
+	}
+}
+
+@media (max-width: 310px) {
+	.team-maker-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.team-maker-player-flex {
+		display: block;
+	}
+
+	.team-maker-player-flex h1 {
+		display: inline;
+		text-align: center;
+	}
+
+	.teams-grid {
+		grid-template-columns: 1fr;
+	}
+	.team-one {
+		border: 0;
+	}
+	.team-two {
+		border: 0;
+	}
+
+	.hide-img {
+		display: none;
+	}
+}
+
+@media (max-width: 850px) {
+	.tier-list-grid-container {
+		grid-template-columns: 1fr;
+	}
+	.tier-list-column-two-grid {
+		grid-template-columns: 1fr 1fr;
+		padding: 15px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;
+	}
+
+	.letter-rank-tier {
+		margin-bottom: 0;
+		margin-top: 25px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		border-bottom-left-radius: 0px;
+	}
+
+	.tier-list-column-two-grid-top {
+		margin: 0;
+	}
+}
+
+@media (max-width: 500px) {
+	.tier-list-grid-container {
+		grid-template-columns: 1fr;
+	}
+	.tier-list-column-two-grid {
+		grid-template-columns: 1fr;
+		padding: 15px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;
+	}
+
+	.letter-rank-tier {
+		margin-bottom: 0;
+		margin-top: 25px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		border-bottom-left-radius: 0px;
+	}
+
+	.tier-list-column-two-grid-top {
+		margin: 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.ultimate-aram-item-grid {
+		grid-template-columns: 1fr;
+	}
 }

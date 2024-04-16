@@ -3,11 +3,11 @@ import React from "react";
 export const Home = () => {
 	return (
 		<div className="wrapper">
-			<h1 className="welcome glass">
+			<h3 className="welcome glass">
 				Welcome to the <span className="retro-span">Retro </span>
 				<span className="future-span">Future </span>
 				<span className="aram-span">Aram </span> website
-			</h1>
+			</h3>
 
 			<div className="description-container glass">
 				<p className="description">
