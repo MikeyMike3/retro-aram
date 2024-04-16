@@ -45,6 +45,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -74,6 +75,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -100,6 +102,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -109,6 +112,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -141,6 +145,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -170,6 +175,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -179,6 +185,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -206,6 +213,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -229,6 +237,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -254,6 +263,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -263,6 +273,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -272,6 +283,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -281,6 +293,7 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 	{
@@ -290,12 +303,16 @@ const ranks = [
 		losses: 0,
 		totalGamesPlayed: 0,
 		winRate: 0,
+		seriesLeft: 0,
 		mmr: mmr,
 	},
 ];
 
 const mmrWin = 25;
 const mmrLoss = 15;
+
+const leaverPenalty = 50;
+
 let wCount = 0;
 let lCount = 0;
 
@@ -304,12 +321,21 @@ for (let i = 0; i < ranks.length; i++) {
 	for (let j = 0; j < ranks[i].history.length; j++) {
 		if ((ranks[i].history[j] === "W") | (ranks[i].history[j] === "w")) {
 			wCount++;
+			ranks[i].mmr += mmrWin;
 		} else if (
 			(ranks[i].history[j] === "L") |
 			(ranks[i].history[j] === "l")
 		) {
 			lCount++;
+			ranks[i].mmr -= mmrLoss;
+			if (ranks[i].mmr < 0) {
+				ranks[i].mmr = 0;
+			}
 		}
+	}
+
+	if (ranks[i].seriesLeft > 0) {
+		ranks[i].mmr -= leaverPenalty * ranks[i].seriesLeft;
 	}
 
 	if (ranks[i].totalGamesPlayed === 0) {
@@ -320,14 +346,6 @@ for (let i = 0; i < ranks.length; i++) {
 	ranks[i].wins = wCount;
 	ranks[i].losses = lCount;
 	ranks[i].winRate = (wCount / ranks[i].totalGamesPlayed) * 100;
-
-	ranks[i].mmr =
-		ranks[i].wins * mmrWin - ranks[i].losses * mmrLoss + ranks[i].mmr;
-
-	// set mmr to 0 if mr is negative
-	if (ranks[i].mmr < 0) {
-		ranks[i].mmr = 0;
-	}
 
 	wCount = 0;
 	lCount = 0;
