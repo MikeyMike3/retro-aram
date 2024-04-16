@@ -778,6 +778,11 @@ input[type="checkbox"]:checked:after {
 	p {
 		font-size: 18px;
 	}
+
+	.team-maker-container h3,
+	.team-maker-player-flex h1 {
+		font-size: 24px;
+	}
 }
 
 @media (max-width: 1250px) {
@@ -801,13 +806,11 @@ input[type="checkbox"]:checked:after {
 		grid-template-columns: 1fr;
 	}
 
-	.team-maker-container h3 {
-		font-size: 24px;
-	}
-
+	.team-maker-container h3,
 	.team-maker-player-flex h1 {
 		font-size: 24px;
 	}
+
 	.team-one {
 		border: 0;
 	}
