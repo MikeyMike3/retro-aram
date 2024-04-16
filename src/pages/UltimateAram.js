@@ -209,11 +209,11 @@ export const UltimateAram = () => {
 				</p>
 			</div>
 			<div className="ultimate-aram-item-container glass">
-				{itemArray.length === 0 && (
+				{/* {itemArray.length === 0 && (
 					<div className="ultimate-aram-item-array-empty">
 						<h3>Click randomize below</h3>
 					</div>
-				)}
+				)} */}
 
 				<div className="ultimate-aram-item-grid">
 					{itemArray.map((item) => (

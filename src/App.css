@@ -5,8 +5,18 @@
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+.sr-only {
+	position: absolute;
+	left: -10000px;
+	width: 1px;
+	height: 1px;
+	top: auto;
+	overflow: hidden;
+}
+
 body {
 	background-color: black;
+	overflow-x: hidden;
 }
 
 #bgVideo {
@@ -28,7 +38,6 @@ body {
 .glass {
 	backdrop-filter: blur(20px);
 }
-
 /* end of global styling*/
 
 /* header styling */
@@ -36,36 +45,46 @@ body {
 header {
 	font-size: 18px;
 	background-color: rgba(36, 142, 212, 0.247);
-	width: 100%;
 	position: sticky;
-	top: 0;
-	padding-left: 25px;
-	padding-right: 25px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	box-sizing: border-box;
 	z-index: 9999;
+	top: 0;
+	left: 0;
 }
 
 .nav-gif {
 	width: 100px;
 	border-radius: 50%;
+	margin: 10px;
 	cursor: pointer;
 }
 
-.nav-flex {
+/* .nav-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+} */
+
+/* .nav-flex-2 {
+	display: flex;
+	gap: 25px;
+} */
+
+.primary-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.nav-flex-2 {
+.primary-navigation {
 	display: flex;
-	align-items: center;
 	gap: 25px;
 }
 
-.nav-flex-2 a {
+.mobile-nav-toggle {
+	display: none;
+}
+
+.primary-navigation a {
 	color: white;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -76,7 +95,7 @@ header {
 	text-decoration: none;
 }
 
-.nav-flex-2 .active {
+.primary-navigation .active {
 	background-color: magenta;
 	color: black;
 	padding-left: 20px;
@@ -87,7 +106,7 @@ header {
 	transition: 500ms;
 }
 
-.nav-flex-2 a:hover {
+.primary-navigation a:hover {
 	background-color: aqua;
 	color: black;
 }
@@ -580,7 +599,7 @@ input[type="checkbox"]:checked:after {
 	margin-bottom: 25px;
 	width: 100%;
 	padding: 15px;
-	min-height: 810px;
+	/* min-height: 810px; */
 	background-color: rgba(36, 142, 212, 0.247);
 }
 
@@ -644,7 +663,7 @@ input[type="checkbox"]:checked:after {
 .ultimate-aram-btn-container {
 	display: flex;
 	justify-content: center;
-	margin-top: 15px;
+	margin-top: 25px;
 	margin-bottom: 25px;
 }
 
@@ -652,8 +671,7 @@ input[type="checkbox"]:checked:after {
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
-	position: absolute;
-	bottom: 12px;
+	position: relative;
 }
 .ultimate-aram-checkbox-container {
 	display: flex;
@@ -698,3 +716,54 @@ input[type="checkbox"]:checked:after {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00ff",endColorstr="#00ffff",GradientType=1);
 }
 /* end of ultimate aram styling*/
+
+@media (max-width: 60em) {
+	.primary-navigation {
+		position: fixed;
+		flex-direction: column;
+		top: 0;
+		right: 0;
+		width: 70%;
+		height: 86.75vh;
+		backdrop-filter: blur(20px);
+		background-color: rgba(0, 0, 0, 0.75);
+		padding: min(10vh, 10rem) 2em;
+	}
+	.visible {
+		display: flex;
+		gap: 35px;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.mobile-nav-toggle {
+		display: block;
+		z-index: 9999;
+		position: absolute;
+		background: url(imgs/icon-hamburger.svg);
+		background-repeat: no-repeat;
+		width: 2rem;
+		border: none;
+		aspect-ratio: 1;
+		top: 3.25rem;
+		right: 2rem;
+		cursor: pointer;
+	}
+
+	.mobile-nav-toggle[aria-expanded="true"] {
+		background: url(imgs/icon-close.svg);
+		background-repeat: no-repeat;
+	}
+	.wrapper {
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* .ultimate-aram-item-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+	} */
+}
