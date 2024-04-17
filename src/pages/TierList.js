@@ -26,6 +26,12 @@ export const sTier = [
 		rank: "S",
 		id: "Loli",
 	},
+	{
+		name: "Rose",
+		img: require("../imgs/dark-rose-disc.PNG"),
+		rank: "S",
+		id: "Rose",
+	},
 ];
 
 export const aTier = [

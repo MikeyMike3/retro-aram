@@ -324,6 +324,16 @@ const ranks = [
 		seriesLeft: 0,
 		mmr: mmr,
 	},
+	{
+		name: "Rose",
+		history: [""],
+		wins: 0,
+		losses: 0,
+		totalGamesPlayed: 0,
+		winRate: 0,
+		seriesLeft: 0,
+		mmr: mmr,
+	},
 ];
 
 const mmrWin = 25;
