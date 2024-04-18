@@ -874,18 +874,36 @@ input[type="checkbox"]:checked:after {
 }
 
 @media (max-width: 500px) {
+	.nav-gif {
+		width: 50px;
+		margin: 5px;
+	}
+
+	.mobile-nav-toggle {
+		top: 1.5rem;
+		right: 1rem;
+	}
+
 	.tier-list-grid-container {
 		grid-template-columns: 1fr;
 	}
 	.tier-list-column-two-grid {
-		grid-template-columns: 1fr;
 		padding: 15px;
 		border-top-right-radius: 0px;
 		border-bottom-right-radius: 15px;
 		border-bottom-left-radius: 15px;
 	}
 
+	.tier-list-grid-item {
+		height: 100%;
+	}
+
+	.tier-list-img-container {
+		height: 150px;
+	}
+
 	.letter-rank-tier {
+		font-size: 120px;
 		margin-bottom: 0;
 		margin-top: 25px;
 		border-top-left-radius: 15px;
@@ -899,7 +917,7 @@ input[type="checkbox"]:checked:after {
 }
 
 @media (max-width: 600px) {
-	.ultimate-aram-item-grid {
-		grid-template-columns: 1fr;
+	.ultimate-aram-item-img-container {
+		height: 100px;
 	}
 }
