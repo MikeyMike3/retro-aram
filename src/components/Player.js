@@ -9,15 +9,12 @@ export const Player = (props) => {
 	};
 	return (
 		<>
-			<div className="player-grid">
-				<h4 className="left">{props.name}</h4>
-				<p className="end">{props.wins}</p>
-				<p className="end">{props.losses}</p>
-				<p className="end">{props.totalGamesPlayed}</p>
-				<p className="end">{formatWinRate(props.winRate)}%</p>
-				<p className="end">{props.mmr}</p>
-			</div>
-			<hr></hr>
+			<td>{props.name}</td>
+			<td>{props.wins}</td>
+			<td>{props.losses}</td>
+			<td>{props.totalGamesPlayed}</td>
+			<td>{formatWinRate(props.winRate)}%</td>
+			<td>{props.mmr}</td>
 		</>
 	);
 };

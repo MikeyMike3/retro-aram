@@ -187,13 +187,41 @@ ul {
 	margin-bottom: 25px;
 }
 
-.player-grid {
+/* .player-grid {
 	display: grid;
 	place-items: center;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 25px;
 	margin-top: 25px;
 	margin-bottom: 25px;
+} */
+.table-info {
+	display: none;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table-container {
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+th,
+td {
+	padding: 25px;
+	text-align: center;
+	font-size: 18px;
+}
+
+th {
+	color: aqua;
+}
+
+tr:nth-of-type(2n) {
+	background-color: rgba(36, 142, 212, 0.2);
 }
 
 .grid-btn {
@@ -218,10 +246,6 @@ ul {
 .ascending {
 	background-color: magenta;
 	color: black;
-}
-
-.end {
-	text-align: center;
 }
 
 .aram-rankings-title {
@@ -798,6 +822,10 @@ input[type="checkbox"]:checked:after {
 }
 
 @media (max-width: 885px) {
+	.table-info {
+		display: block;
+	}
+
 	.team-maker-grid {
 		grid-template-columns: 1fr;
 	}

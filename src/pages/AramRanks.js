@@ -567,7 +567,7 @@ export const AramRanks = () => {
 		}
 	}, [mmrClickCounter]);
 
-	const gridBtnClassNames = "end grid-btn";
+	const gridBtnClassNames = "grid-btn";
 
 	return (
 		<div className="wrapper">
@@ -599,72 +599,114 @@ export const AramRanks = () => {
 
 			<div className="hero-container">
 				<div className="ranks-container glass">
-					<div className="player-grid grid-key">
-						<h4>Name</h4>
-						<button
-							className={`${gridBtnClassNames} ${
-								winsClickCounter === 1
-									? "reverse-ascending"
-									: ""
-							} ${winsClickCounter === 2 ? "ascending" : ""}`}
-							onClick={handleClickWins}
-						>
-							Wins
-						</button>
-						<button
-							className={`${gridBtnClassNames} ${
-								lossesClickCounter === 1
-									? "reverse-ascending"
-									: ""
-							} ${lossesClickCounter === 2 ? "ascending" : ""}`}
-							onClick={handleClickLosses}
-						>
-							Losses
-						</button>
-						<button
-							className={`${gridBtnClassNames} ${
-								totalGamesPlayedClickCounter === 1
-									? "reverse-ascending"
-									: ""
-							} ${
-								totalGamesPlayedClickCounter === 2
-									? "ascending"
-									: ""
-							}`}
-							onClick={handleClickTotalGamesPlayed}
-						>
-							Games Played
-						</button>
-						<button
-							className={`${gridBtnClassNames} ${
-								winRateClickCounter === 1
-									? "reverse-ascending"
-									: ""
-							} ${winRateClickCounter === 2 ? "ascending" : ""}`}
-							onClick={handleClickWinRate}
-						>
-							Win Rate
-						</button>
-						<button
-							className={`${gridBtnClassNames} ${
-								mmrClickCounter === 1 ? "reverse-ascending" : ""
-							} ${mmrClickCounter === 2 ? "ascending" : ""}`}
-							onClick={handleClickMmr}
-						>
-							MMR
-						</button>
+					<div className="table-info">
+						<p>
+							<strong>
+								Scroll to the side to see more table data.
+							</strong>
+						</p>
 					</div>
-					{displayRanks.map((item) => (
-						<Player
-							key={item.name}
-							name={item.name}
-							wins={item.wins}
-							losses={item.losses}
-							totalGamesPlayed={item.totalGamesPlayed}
-							winRate={item.winRate}
-							mmr={item.mmr}
-						/>
-					))}
+
+					<div className="table-container">
+						<table>
+							<tr>
+								<th>Name</th>
+								<th>
+									<button
+										className={`${gridBtnClassNames} ${
+											winsClickCounter === 1
+												? "reverse-ascending"
+												: ""
+										} ${
+											winsClickCounter === 2
+												? "ascending"
+												: ""
+										}`}
+										onClick={handleClickWins}
+									>
+										Wins
+									</button>
+								</th>
+								<th>
+									<button
+										className={`${gridBtnClassNames} ${
+											lossesClickCounter === 1
+												? "reverse-ascending"
+												: ""
+										} ${
+											lossesClickCounter === 2
+												? "ascending"
+												: ""
+										}`}
+										onClick={handleClickLosses}
+									>
+										Losses
+									</button>
+								</th>
+								<th>
+									<button
+										className={`${gridBtnClassNames} ${
+											totalGamesPlayedClickCounter === 1
+												? "reverse-ascending"
+												: ""
+										} ${
+											totalGamesPlayedClickCounter === 2
+												? "ascending"
+												: ""
+										}`}
+										onClick={handleClickTotalGamesPlayed}
+									>
+										Games Played
+									</button>
+								</th>
+								<th>
+									<button
+										className={`${gridBtnClassNames} ${
+											winRateClickCounter === 1
+												? "reverse-ascending"
+												: ""
+										} ${
+											winRateClickCounter === 2
+												? "ascending"
+												: ""
+										}`}
+										onClick={handleClickWinRate}
+									>
+										Win Rate
+									</button>
+								</th>
+								<th>
+									<button
+										className={`${gridBtnClassNames} ${
+											mmrClickCounter === 1
+												? "reverse-ascending"
+												: ""
+										} ${
+											mmrClickCounter === 2
+												? "ascending"
+												: ""
+										}`}
+										onClick={handleClickMmr}
+									>
+										MMR
+									</button>
+								</th>
+							</tr>
+							{displayRanks.map((item) => (
+								<tr>
+									<Player
+										key={item.name}
+										name={item.name}
+										wins={item.wins}
+										losses={item.losses}
+										totalGamesPlayed={item.totalGamesPlayed}
+										winRate={item.winRate}
+										mmr={item.mmr}
+									/>
+								</tr>
+							))}
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
