@@ -49,6 +49,9 @@ const ranks = [
 			"l",
 			"l",
 			"w",
+			"w",
+			"l",
+			"l",
 		],
 		wins: 0,
 		losses: 0,
@@ -87,6 +90,9 @@ const ranks = [
 			"l",
 			"l",
 			"w",
+			"w",
+			"l",
+			"l",
 		],
 		wins: 0,
 		losses: 0,
@@ -120,6 +126,9 @@ const ranks = [
 			"w",
 			"w",
 			"l",
+			"w",
+			"w",
+			"l",
 		],
 		wins: 0,
 		losses: 0,
@@ -130,19 +139,7 @@ const ranks = [
 	},
 	{
 		name: "Drango",
-		history: [
-			"w",
-			"l",
-			"w",
-			"w",
-			"w",
-			"l",
-			"l",
-			"l",
-			"w",
-			"w",
-			"l",
-		],
+		history: ["w", "l", "w", "w", "w", "l", "l", "l", "w", "w", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -179,6 +176,9 @@ const ranks = [
 			"w",
 			"w",
 			"l",
+			"l",
+			"w",
+			"w",
 			"l",
 			"w",
 			"w",
@@ -225,6 +225,9 @@ const ranks = [
 			"w",
 			"w",
 			"w",
+			"w",
+			"l",
+			"l",
 		],
 		wins: 0,
 		losses: 0,
@@ -274,6 +277,9 @@ const ranks = [
 			"w",
 			"w",
 			"w",
+			"w",
+			"w",
+			"l",
 		],
 		wins: 0,
 		losses: 0,
@@ -365,7 +371,7 @@ const ranks = [
 	},
 	{
 		name: "Ronin",
-		history: ["l", "l", "w", "w"],
+		history: ["l", "l", "w", "w", "w", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -385,7 +391,7 @@ const ranks = [
 	},
 	{
 		name: "Rose",
-		history: ["w", "w", "l", "l", "w", "l", "l", "l"],
+		history: ["w", "w", "l", "l", "w", "l", "l", "l", "w", "l", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -406,10 +412,7 @@ let lCount = 0;
 // loops through all players and sets appropriate data for each player
 for (let i = 0; i < ranks.length; i++) {
 	for (let j = 0; j < ranks[i].history.length; j++) {
-		if (
-			(ranks[i].history[j] === "W") |
-			(ranks[i].history[j] === "w")
-		) {
+		if ((ranks[i].history[j] === "W") | (ranks[i].history[j] === "w")) {
 			wCount++;
 			ranks[i].mmr += mmrWin;
 		} else if (
@@ -522,9 +525,7 @@ export const AramRanks = () => {
 	};
 
 	const handleClickTotalGamesPlayed = () => {
-		setTotalGamesPlayedClickCounter(
-			(clickCounter) => clickCounter + 1
-		);
+		setTotalGamesPlayedClickCounter((clickCounter) => clickCounter + 1);
 	};
 
 	const handleClickMmr = () => {
@@ -587,17 +588,9 @@ export const AramRanks = () => {
 			setLossesClickCounter(0);
 			setWinRateClickCounter(0);
 
-			sortReverseAscending(
-				ranks,
-				"totalGamesPlayed",
-				setDisplayRanks
-			);
+			sortReverseAscending(ranks, "totalGamesPlayed", setDisplayRanks);
 		} else if (totalGamesPlayedClickCounter === 2) {
-			sortAscending(
-				ranks,
-				"totalGamesPlayed",
-				setDisplayRanks
-			);
+			sortAscending(ranks, "totalGamesPlayed", setDisplayRanks);
 		} else if (totalGamesPlayedClickCounter === 3) {
 			setTotalGamesPlayedClickCounter(0);
 			setMmrClickCounter(1);
@@ -632,26 +625,19 @@ export const AramRanks = () => {
 
 			<div className="filter-key-container glass">
 				<h3>
-					<span className="rankings-span">
-						Rankings
-					</span>{" "}
-					Filter Key
+					<span className="rankings-span">Rankings</span> Filter Key
 				</h3>
 				<p className="ascending-key">
-					<span>Ascending</span> order(Lowest to
-					Highest).
+					<span>Ascending</span> order(Lowest to Highest).
 				</p>
 				<p className="reverse-ascending-key">
-					<span>Descending</span> order(Highest to
-					Lowest).
+					<span>Descending</span> order(Highest to Lowest).
 				</p>
 				<p className="reverse-ascending-key">
-					1 click for <span>descending</span>{" "}
-					order.
+					1 click for <span>descending</span> order.
 				</p>
 				<p className="ascending-key">
-					2 clicks for <span>ascending</span>{" "}
-					order.
+					2 clicks for <span>ascending</span> order.
 				</p>
 				<p>Click the stat labels below to sort.</p>
 			</div>
@@ -661,9 +647,7 @@ export const AramRanks = () => {
 					<div className="table-info">
 						<p>
 							<strong>
-								Scroll to the
-								side to see more
-								table data.
+								Scroll to the side to see more table data.
 							</strong>
 						</p>
 					</div>
@@ -675,135 +659,92 @@ export const AramRanks = () => {
 								<th>
 									<button
 										className={`${gridBtnClassNames} ${
-											winsClickCounter ===
-											1
+											winsClickCounter === 1
 												? "reverse-ascending"
 												: ""
 										} ${
-											winsClickCounter ===
-											2
+											winsClickCounter === 2
 												? "ascending"
 												: ""
 										}`}
-										onClick={
-											handleClickWins
-										}
-									>
+										onClick={handleClickWins}>
 										Wins
 									</button>
 								</th>
 								<th>
 									<button
 										className={`${gridBtnClassNames} ${
-											lossesClickCounter ===
-											1
+											lossesClickCounter === 1
 												? "reverse-ascending"
 												: ""
 										} ${
-											lossesClickCounter ===
-											2
+											lossesClickCounter === 2
 												? "ascending"
 												: ""
 										}`}
-										onClick={
-											handleClickLosses
-										}
-									>
+										onClick={handleClickLosses}>
 										Losses
 									</button>
 								</th>
 								<th>
 									<button
 										className={`${gridBtnClassNames} ${
-											totalGamesPlayedClickCounter ===
-											1
+											totalGamesPlayedClickCounter === 1
 												? "reverse-ascending"
 												: ""
 										} ${
-											totalGamesPlayedClickCounter ===
-											2
+											totalGamesPlayedClickCounter === 2
 												? "ascending"
 												: ""
 										}`}
-										onClick={
-											handleClickTotalGamesPlayed
-										}
-									>
-										Games
-										Played
+										onClick={handleClickTotalGamesPlayed}>
+										Games Played
 									</button>
 								</th>
 								<th>
 									<button
 										className={`${gridBtnClassNames} ${
-											winRateClickCounter ===
-											1
+											winRateClickCounter === 1
 												? "reverse-ascending"
 												: ""
 										} ${
-											winRateClickCounter ===
-											2
+											winRateClickCounter === 2
 												? "ascending"
 												: ""
 										}`}
-										onClick={
-											handleClickWinRate
-										}
-									>
-										Win
-										Rate
+										onClick={handleClickWinRate}>
+										Win Rate
 									</button>
 								</th>
 								<th>
 									<button
 										className={`${gridBtnClassNames} ${
-											mmrClickCounter ===
-											1
+											mmrClickCounter === 1
 												? "reverse-ascending"
 												: ""
 										} ${
-											mmrClickCounter ===
-											2
+											mmrClickCounter === 2
 												? "ascending"
 												: ""
 										}`}
-										onClick={
-											handleClickMmr
-										}
-									>
+										onClick={handleClickMmr}>
 										MMR
 									</button>
 								</th>
 							</tr>
-							{displayRanks.map(
-								(item) => (
-									<tr>
-										<Player
-											key={
-												item.name
-											}
-											name={
-												item.name
-											}
-											wins={
-												item.wins
-											}
-											losses={
-												item.losses
-											}
-											totalGamesPlayed={
-												item.totalGamesPlayed
-											}
-											winRate={
-												item.winRate
-											}
-											mmr={
-												item.mmr
-											}
-										/>
-									</tr>
-								)
-							)}
+							{displayRanks.map((item) => (
+								<tr>
+									<Player
+										key={item.name}
+										name={item.name}
+										wins={item.wins}
+										losses={item.losses}
+										totalGamesPlayed={item.totalGamesPlayed}
+										winRate={item.winRate}
+										mmr={item.mmr}
+									/>
+								</tr>
+							))}
 						</table>
 					</div>
 				</div>
