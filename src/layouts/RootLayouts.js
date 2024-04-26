@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink, Link, Outlet } from "react-router-dom";
 import gif from "../imgs/retro-future.gif";
 
@@ -11,9 +11,9 @@ export const RootLayouts = () => {
 		setIsExpanded((item) => !item);
 	};
 
-	useEffect(() => {
-		console.log(toggleMobileMenu);
-	}, [toggleMobileMenu]);
+	// useEffect(() => {
+	// 	console.log(toggleMobileMenu);
+	// }, [toggleMobileMenu]);
 
 	let className = "primary-navigation";
 
@@ -33,8 +33,7 @@ export const RootLayouts = () => {
 							onClick={mobileMenuOnClick}
 							className="mobile-nav-toggle"
 							aria-controls="primary-navigation"
-							aria-expanded={isExpanded}
-						>
+							aria-expanded={isExpanded}>
 							<span className="sr-only">Menu</span>
 						</button>
 						<nav>
@@ -42,8 +41,7 @@ export const RootLayouts = () => {
 								id="primary-navigation"
 								className={`${className} ${
 									toggleMobileMenu ? "visible" : "hidden"
-								}`}
-							>
+								}`}>
 								<li>
 									<NavLink to="/">Home</NavLink>
 								</li>
@@ -75,8 +73,7 @@ export const RootLayouts = () => {
 					autoPlay
 					loop
 					muted
-					id="bgVideo"
-				></video>
+					id="bgVideo"></video>
 				<Outlet />
 			</main>
 		</>

@@ -14,7 +14,7 @@ const mmr = 100;
 //     mmr: mmr,
 // },
 
-const ranks = [
+export const ranks = [
 	{
 		name: "Siren",
 		history: [
@@ -62,6 +62,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/siren-disc.PNG"),
+		rank: null,
+		id: "Siren",
 	},
 	{
 		name: "You",
@@ -103,6 +106,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/you-disc.gif"),
+		rank: null,
+		id: "You",
 	},
 	{
 		name: "Plexo",
@@ -142,6 +148,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/plexo-disc.gif"),
+		rank: null,
+		id: "Plexo",
 	},
 	{
 		name: "Drango",
@@ -152,6 +161,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/drango-disc.png"),
+		rank: null,
+		id: "Drango",
 	},
 	{
 		name: "Fries",
@@ -202,6 +214,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/fries.png"),
+		rank: "B",
+		id: "Fries",
 	},
 	{
 		name: "Ethiks",
@@ -247,6 +262,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/ethiks-disc.png"),
+		rank: null,
+		id: "Ethiks",
 	},
 	{
 		name: "Kane",
@@ -257,6 +275,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/kane-disc.PNG"),
+		rank: null,
+		id: "Kane",
 	},
 	{
 		name: "Amp",
@@ -302,6 +323,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/amp-disc.png"),
+		rank: null,
+		id: "Amp",
 	},
 	{
 		name: "Money",
@@ -329,6 +353,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/money-disc.png"),
+		rank: null,
+		id: "Money",
 	},
 	{
 		name: "Loli",
@@ -366,6 +393,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/loli-disc.gif"),
+		rank: null,
+		id: "Loli",
 	},
 	{
 		name: "Argo",
@@ -376,6 +406,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 1,
 		mmr: mmr,
+		img: require("../imgs/argo-disc.png"),
+		rank: null,
+		id: "Argo",
 	},
 	{
 		name: "Gucci",
@@ -386,6 +419,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/gucci-disc.PNG"),
+		rank: null,
+		id: "Gucci",
 	},
 	{
 		name: "Ronin",
@@ -396,6 +432,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/ronin-disc.png"),
+		rank: null,
+		id: "Ronin",
 	},
 	{
 		name: "Shady",
@@ -406,6 +445,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/shady-disc.png"),
+		rank: null,
+		id: "Shady",
 	},
 	{
 		name: "Rose",
@@ -431,6 +473,9 @@ const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
+		img: require("../imgs/dark-rose-disc.PNG"),
+		rank: null,
+		id: "Rose",
 	},
 ];
 
@@ -464,9 +509,7 @@ for (let i = 0; i < ranks.length; i++) {
 		ranks[i].mmr -= leaverPenalty * ranks[i].seriesLeft;
 	}
 
-	if (ranks[i].totalGamesPlayed === 0) {
-		ranks[i].totalGamesPlayed = ranks[i].history.length;
-	}
+	ranks[i].totalGamesPlayed = wCount + lCount;
 
 	// set data within the ranks array's objects
 	ranks[i].wins = wCount;
