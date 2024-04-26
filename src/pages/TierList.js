@@ -2,8 +2,6 @@ import React from "react";
 import { TierListPlayer } from "../components/TierListPlayer";
 import { ranks } from "./AramRanks";
 
-console.log(ranks);
-
 export const sTier = [];
 export const aTier = [];
 export const bTier = [];
