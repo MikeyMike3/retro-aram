@@ -9,8 +9,6 @@ export const cTier = [];
 export const dTier = [];
 export const fTier = [];
 
-console.log(ranks);
-
 const sTierMmr = 400;
 const aTierMmr = 300;
 const bTierMmr = 200;
@@ -19,7 +17,6 @@ const dTierMmr = 100;
 const fTierMmr = 75;
 
 for (let i = 0; i < ranks.length; i++) {
-	console.log(ranks[i]);
 	if (ranks[i].mmr >= sTierMmr) {
 		sTier.push(ranks[i]);
 		ranks[i].rank = "S";
