@@ -9,6 +9,8 @@ export const cTier = [];
 export const dTier = [];
 export const fTier = [];
 
+console.log(ranks);
+
 const sTierMmr = 400;
 const aTierMmr = 300;
 const bTierMmr = 200;
@@ -17,22 +19,23 @@ const dTierMmr = 100;
 const fTierMmr = 75;
 
 for (let i = 0; i < ranks.length; i++) {
-	if (ranks[i].mmr > sTierMmr) {
+	console.log(ranks[i]);
+	if (ranks[i].mmr >= sTierMmr) {
 		sTier.push(ranks[i]);
 		ranks[i].rank = "S";
-	} else if (ranks[i].mmr > aTierMmr) {
+	} else if (ranks[i].mmr >= aTierMmr) {
 		aTier.push(ranks[i]);
 		ranks[i].rank = "A";
-	} else if (ranks[i].mmr > bTierMmr) {
+	} else if (ranks[i].mmr >= bTierMmr) {
 		bTier.push(ranks[i]);
 		ranks[i].rank = "B";
-	} else if (ranks[i].mmr > cTierMmr) {
+	} else if (ranks[i].mmr >= cTierMmr) {
 		cTier.push(ranks[i]);
 		ranks[i].rank = "C";
-	} else if (ranks[i].mmr > dTierMmr) {
+	} else if (ranks[i].mmr >= dTierMmr) {
 		dTier.push(ranks[i]);
 		ranks[i].rank = "D";
-	} else if (ranks[i].mmr > fTierMmr) {
+	} else if (ranks[i].mmr >= fTierMmr || ranks[i].mmr >= 0) {
 		fTier.push(ranks[i]);
 		ranks[i].rank = "F";
 	}
