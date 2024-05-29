@@ -1,9 +1,17 @@
-import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import React from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 export const RankingsLayout = () => {
-  return (
-    <div className="wrapper">
+	const navigate = useNavigate();
+
+	const handleNavigation = (event) => {
+		const selectedPage = event.target.value;
+		if (selectedPage) {
+			navigate(selectedPage);
+		}
+	};
+	return (
+		<div className="wrapper">
 			<h3 className="aram-rankings-title glass">
 				<span className="retro-span">Retro </span>
 				<span className="future-span">Future </span>
@@ -12,9 +20,20 @@ export const RankingsLayout = () => {
 			</h3>
 
 			<div className="filter-key-container glass">
-				<h3>
-					<span className="rankings-span">Rankings</span> Filter Key
-				</h3>
+				<div className="rankings-filter-flex">
+					<h3>
+						<span className="rankings-span">Rankings</span> Filter
+						Key
+					</h3>
+					<div className="select-container">
+						<select
+							className="styled-select"
+							onChange={handleNavigation}>
+							<option value="season_1">Season 1</option>
+							<option value="season_2">Season 2</option>
+						</select>
+					</div>
+				</div>
 				<p className="ascending-key">
 					<span>Ascending</span> order(Lowest to Highest).
 				</p>
@@ -28,15 +47,10 @@ export const RankingsLayout = () => {
 					2 clicks for <span>ascending</span> order.
 				</p>
 
-        {/* <NavLink to="season_1">Season 1</NavLink> */}
-        <select>
-          <option><Link to="season_1">Season 1</Link></option>
-          <option><Link to="season_2">Season 2</Link></option>
-        </select>
 				<p>Click the stat labels below to sort.</p>
 			</div>
 
-      <Outlet />
-    </div>
-  )
-}
+			<Outlet />
+		</div>
+	);
+};

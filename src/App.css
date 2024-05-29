@@ -38,6 +38,48 @@ body {
 .glass {
 	backdrop-filter: blur(20px);
 }
+
+.select-container {
+	position: relative;
+	display: inline-block;
+	width: 150px;
+}
+
+.styled-select {
+	width: 100%;
+	padding: 10px;
+	border-radius: 4px;
+	background-color: white;
+	font-size: 16px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+}
+
+.styled-select:focus {
+	outline: none;
+	border-color: #07bff3;
+}
+
+.select-container::after {
+	content: "▼";
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	pointer-events: none;
+	transform: translateY(-50%);
+	font-size: 14px;
+	color: aqua;
+}
+
+.styled-select:hover {
+	border-color: gold;
+}
+
+.styled-select option {
+	padding: 10px;
+}
 /* end of global styling*/
 
 /* header styling */
@@ -187,6 +229,16 @@ ul {
 	margin-bottom: 25px;
 }
 
+.rankings-filter-flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.center {
+	text-align: center;
+}
+
 /* .player-grid {
 	display: grid;
 	place-items: center;
@@ -296,6 +348,7 @@ hr {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 25px;
+	margin-bottom: 25px;
 	border-radius: 15px;
 	max-width: 900px;
 	font-size: 64px;

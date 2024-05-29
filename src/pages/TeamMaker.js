@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { sTier, aTier, bTier, cTier, dTier, fTier } from "./TierList";
+import {
+	sTier,
+	aTier,
+	bTier,
+	cTier,
+	dTier,
+	fTier,
+} from "./seasonTierList/Season1Tier.js";
+
 import { TeamMakerPlayer } from "../components/TeamMakerPlayer";
 
 export const TeamMaker = () => {

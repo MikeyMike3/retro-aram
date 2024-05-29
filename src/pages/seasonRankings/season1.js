@@ -17,7 +17,7 @@ const mmr = 100;
 //     mmr: mmr,
 // },
 
-export const ranks = [
+export const season_1Ranks = [
 	{
 		name: "Siren",
 		history: [
@@ -584,7 +584,7 @@ export const ranks = [
 	},
 ];
 
-leaderboard(ranks);
+leaderboard(season_1Ranks);
 
 export const Season1 = () => {
 	const [displayRanks, setDisplayRanks] = useState([]);
@@ -623,9 +623,9 @@ export const Season1 = () => {
 			setLossesClickCounter(0);
 			setWinRateClickCounter(0);
 			setTotalGamesPlayedClickCounter(0);
-			sortReverseAscending(ranks, "wins", setDisplayRanks);
+			sortReverseAscending(season_1Ranks, "wins", setDisplayRanks);
 		} else if (winsClickCounter === 2) {
-			sortAscending(ranks, "wins", setDisplayRanks);
+			sortAscending(season_1Ranks, "wins", setDisplayRanks);
 		} else if (winsClickCounter === 3) {
 			setWinsClickCounter(0);
 			setMmrClickCounter(1);
@@ -639,9 +639,9 @@ export const Season1 = () => {
 			setWinsClickCounter(0);
 			setWinRateClickCounter(0);
 			setTotalGamesPlayedClickCounter(0);
-			sortReverseAscending(ranks, "losses", setDisplayRanks);
+			sortReverseAscending(season_1Ranks, "losses", setDisplayRanks);
 		} else if (lossesClickCounter === 2) {
-			sortAscending(ranks, "losses", setDisplayRanks);
+			sortAscending(season_1Ranks, "losses", setDisplayRanks);
 		} else if (lossesClickCounter === 3) {
 			setLossesClickCounter(0);
 			setMmrClickCounter(1);
@@ -655,9 +655,9 @@ export const Season1 = () => {
 			setWinsClickCounter(0);
 			setLossesClickCounter(0);
 			setTotalGamesPlayedClickCounter(0);
-			sortReverseAscending(ranks, "winRate", setDisplayRanks);
+			sortReverseAscending(season_1Ranks, "winRate", setDisplayRanks);
 		} else if (winRateClickCounter === 2) {
-			sortAscending(ranks, "winRate", setDisplayRanks);
+			sortAscending(season_1Ranks, "winRate", setDisplayRanks);
 		} else if (winRateClickCounter === 3) {
 			setWinRateClickCounter(0);
 			setMmrClickCounter(1);
@@ -672,9 +672,13 @@ export const Season1 = () => {
 			setLossesClickCounter(0);
 			setWinRateClickCounter(0);
 
-			sortReverseAscending(ranks, "totalGamesPlayed", setDisplayRanks);
+			sortReverseAscending(
+				season_1Ranks,
+				"totalGamesPlayed",
+				setDisplayRanks
+			);
 		} else if (totalGamesPlayedClickCounter === 2) {
-			sortAscending(ranks, "totalGamesPlayed", setDisplayRanks);
+			sortAscending(season_1Ranks, "totalGamesPlayed", setDisplayRanks);
 		} else if (totalGamesPlayedClickCounter === 3) {
 			setTotalGamesPlayedClickCounter(0);
 			setMmrClickCounter(1);
@@ -688,9 +692,9 @@ export const Season1 = () => {
 			setLossesClickCounter(0);
 			setWinRateClickCounter(0);
 			setTotalGamesPlayedClickCounter(0);
-			sortReverseAscending(ranks, "mmr", setDisplayRanks);
+			sortReverseAscending(season_1Ranks, "mmr", setDisplayRanks);
 		} else if (mmrClickCounter === 2) {
-			sortAscending(ranks, "mmr", setDisplayRanks);
+			sortAscending(season_1Ranks, "mmr", setDisplayRanks);
 		} else if (mmrClickCounter === 3) {
 			setMmrClickCounter(1);
 		}
@@ -699,115 +703,111 @@ export const Season1 = () => {
 	const gridBtnClassNames = "grid-btn";
 
 	return (
+		<div className="hero-container">
+			<div className="ranks-container glass">
+				<h2 className="center">Season 1</h2>
+				<div className="table-info">
+					<p>
+						<strong>
+							Scroll to the side to see more table data.
+						</strong>
+					</p>
+				</div>
 
-			<div className="hero-container">
-        
-				<div className="ranks-container glass">
-          Season 1
-					<div className="table-info">
-						<p>
-							<strong>
-								Scroll to the side to see more table data.
-							</strong>
-						</p>
-					</div>
-
-					<div className="table-container">
-						<table>
+				<div className="table-container">
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>
+								<button
+									className={`${gridBtnClassNames} ${
+										winsClickCounter === 1
+											? "reverse-ascending"
+											: ""
+									} ${
+										winsClickCounter === 2
+											? "ascending"
+											: ""
+									}`}
+									onClick={handleClickWins}>
+									Wins
+								</button>
+							</th>
+							<th>
+								<button
+									className={`${gridBtnClassNames} ${
+										lossesClickCounter === 1
+											? "reverse-ascending"
+											: ""
+									} ${
+										lossesClickCounter === 2
+											? "ascending"
+											: ""
+									}`}
+									onClick={handleClickLosses}>
+									Losses
+								</button>
+							</th>
+							<th>
+								<button
+									className={`${gridBtnClassNames} ${
+										totalGamesPlayedClickCounter === 1
+											? "reverse-ascending"
+											: ""
+									} ${
+										totalGamesPlayedClickCounter === 2
+											? "ascending"
+											: ""
+									}`}
+									onClick={handleClickTotalGamesPlayed}>
+									Games Played
+								</button>
+							</th>
+							<th>
+								<button
+									className={`${gridBtnClassNames} ${
+										winRateClickCounter === 1
+											? "reverse-ascending"
+											: ""
+									} ${
+										winRateClickCounter === 2
+											? "ascending"
+											: ""
+									}`}
+									onClick={handleClickWinRate}>
+									Win Rate
+								</button>
+							</th>
+							<th>
+								<button
+									className={`${gridBtnClassNames} ${
+										mmrClickCounter === 1
+											? "reverse-ascending"
+											: ""
+									} ${
+										mmrClickCounter === 2 ? "ascending" : ""
+									}`}
+									onClick={handleClickMmr}>
+									MMR
+								</button>
+							</th>
+						</tr>
+						{displayRanks.map((item) => (
 							<tr>
-								<th>Name</th>
-								<th>
-									<button
-										className={`${gridBtnClassNames} ${
-											winsClickCounter === 1
-												? "reverse-ascending"
-												: ""
-										} ${
-											winsClickCounter === 2
-												? "ascending"
-												: ""
-										}`}
-										onClick={handleClickWins}>
-										Wins
-									</button>
-								</th>
-								<th>
-									<button
-										className={`${gridBtnClassNames} ${
-											lossesClickCounter === 1
-												? "reverse-ascending"
-												: ""
-										} ${
-											lossesClickCounter === 2
-												? "ascending"
-												: ""
-										}`}
-										onClick={handleClickLosses}>
-										Losses
-									</button>
-								</th>
-								<th>
-									<button
-										className={`${gridBtnClassNames} ${
-											totalGamesPlayedClickCounter === 1
-												? "reverse-ascending"
-												: ""
-										} ${
-											totalGamesPlayedClickCounter === 2
-												? "ascending"
-												: ""
-										}`}
-										onClick={handleClickTotalGamesPlayed}>
-										Games Played
-									</button>
-								</th>
-								<th>
-									<button
-										className={`${gridBtnClassNames} ${
-											winRateClickCounter === 1
-												? "reverse-ascending"
-												: ""
-										} ${
-											winRateClickCounter === 2
-												? "ascending"
-												: ""
-										}`}
-										onClick={handleClickWinRate}>
-										Win Rate
-									</button>
-								</th>
-								<th>
-									<button
-										className={`${gridBtnClassNames} ${
-											mmrClickCounter === 1
-												? "reverse-ascending"
-												: ""
-										} ${
-											mmrClickCounter === 2
-												? "ascending"
-												: ""
-										}`}
-										onClick={handleClickMmr}>
-										MMR
-									</button>
-								</th>
+								<Player
+									key={item.name}
+									name={item.name}
+									wins={item.wins}
+									losses={item.losses}
+									totalGamesPlayed={item.totalGamesPlayed}
+									winRate={item.winRate}
+									mmr={item.mmr}
+								/>
 							</tr>
-							{displayRanks.map((item) => (
-								<tr>
-									<Player
-										key={item.name}
-										name={item.name}
-										wins={item.wins}
-										losses={item.losses}
-										totalGamesPlayed={item.totalGamesPlayed}
-										winRate={item.winRate}
-										mmr={item.mmr}
-									/>
-								</tr>
-							))}
-						</table>
-					</div>
+						))}
+					</table>
 				</div>
 			</div>
+		</div>
 	);
 };
