@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Player } from "../components/Player";
-import { leaderboard } from "../functions/leaderboard";
-import { sortAscending } from "../functions/sortAscending";
-import { sortReverseAscending } from "../functions/sortReverseAscending";
+import { Player } from "../../components/Player";
+import { leaderboard } from "../../functions/leaderboard";
+import { sortAscending } from "../../functions/sortAscending";
+import { sortReverseAscending } from "../../functions/sortReverseAscending";
 
 const mmr = 100;
 
@@ -76,7 +76,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/siren-disc.PNG"),
+		img: require("../../imgs/siren-disc.PNG"),
 		rank: null,
 		id: "Siren",
 	},
@@ -134,7 +134,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/you-disc.gif"),
+		img: require("../../imgs/you-disc.gif"),
 		rank: null,
 		id: "You",
 	},
@@ -182,7 +182,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/plexo-disc.gif"),
+		img: require("../../imgs/plexo-disc.gif"),
 		rank: null,
 		id: "Plexo",
 	},
@@ -213,7 +213,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/drango-disc.png"),
+		img: require("../../imgs/drango-disc.png"),
 		rank: null,
 		id: "Drango",
 	},
@@ -280,7 +280,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/fries.png"),
+		img: require("../../imgs/fries.png"),
 		rank: "B",
 		id: "Fries",
 	},
@@ -339,7 +339,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/ethiks-disc.png"),
+		img: require("../../imgs/ethiks-disc.png"),
 		rank: null,
 		id: "Ethiks",
 	},
@@ -352,7 +352,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/kane-disc.PNG"),
+		img: require("../../imgs/kane-disc.PNG"),
 		rank: null,
 		id: "Kane",
 	},
@@ -414,7 +414,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/amp-disc.png"),
+		img: require("../../imgs/amp-disc.png"),
 		rank: null,
 		id: "Amp",
 	},
@@ -444,7 +444,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/money-disc.png"),
+		img: require("../../imgs/money-disc.png"),
 		rank: null,
 		id: "Money",
 	},
@@ -492,7 +492,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/loli-disc.gif"),
+		img: require("../../imgs/loli-disc.gif"),
 		rank: null,
 		id: "Loli",
 	},
@@ -505,7 +505,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 1,
 		mmr: mmr,
-		img: require("../imgs/argo-disc.png"),
+		img: require("../../imgs/argo-disc.png"),
 		rank: null,
 		id: "Argo",
 	},
@@ -518,7 +518,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/gucci-disc.PNG"),
+		img: require("../../imgs/gucci-disc.PNG"),
 		rank: null,
 		id: "Gucci",
 	},
@@ -531,7 +531,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/ronin-disc.png"),
+		img: require("../../imgs/ronin-disc.png"),
 		rank: null,
 		id: "Ronin",
 	},
@@ -544,7 +544,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/shady-disc.png"),
+		img: require("../../imgs/shady-disc.png"),
 		rank: null,
 		id: "Shady",
 	},
@@ -578,7 +578,7 @@ export const ranks = [
 		winRate: 0,
 		seriesLeft: 0,
 		mmr: mmr,
-		img: require("../imgs/dark-rose-disc.PNG"),
+		img: require("../../imgs/dark-rose-disc.PNG"),
 		rank: null,
 		id: "Rose",
 	},
@@ -586,65 +586,7 @@ export const ranks = [
 
 leaderboard(ranks);
 
-// function sortReverseAscending(ranksArray, propertyName, setter) {
-// 	if (Array.isArray(ranksArray)) {
-// 		// Filter out any undefined elements or elements that don't have the specified property
-// 		const validRanks = ranksArray.filter(
-// 			(rank) =>
-// 				rank &&
-// 				typeof rank === "object" &&
-// 				rank.hasOwnProperty(propertyName)
-// 		);
-
-// 		// Check if the filtered array is not empty
-// 		if (validRanks.length > 0) {
-// 			// Sort the valid ranks array based on the specified property
-// 			const sortedRanks = validRanks.sort(
-// 				(a, b) => b[propertyName] - a[propertyName]
-// 			);
-
-// 			// Call setDisplayRanks with the sorted array
-// 			setter(sortedRanks);
-// 		} else {
-// 			console.error(
-// 				`All elements in ranks are undefined or do not have '${propertyName}' property`
-// 			);
-// 		}
-// 	} else {
-// 		console.error("ranks is not an array or is undefined");
-// 	}
-// }
-
-// function sortAscending(ranksArray, propertyName, setter) {
-// 	if (Array.isArray(ranksArray)) {
-// 		// Filter out any undefined elements or elements that don't have the specified property
-// 		const validRanks = ranksArray.filter(
-// 			(rank) =>
-// 				rank &&
-// 				typeof rank === "object" &&
-// 				rank.hasOwnProperty(propertyName)
-// 		);
-
-// 		// Check if the filtered array is not empty
-// 		if (validRanks.length > 0) {
-// 			// Sort the valid ranks array based on the specified property
-// 			const sortedRanks = validRanks.sort(
-// 				(a, b) => a[propertyName] - b[propertyName]
-// 			);
-
-// 			// Call setDisplayRanks with the sorted array
-// 			setter(sortedRanks);
-// 		} else {
-// 			console.error(
-// 				`All elements in ranks are undefined or do not have '${propertyName}' property`
-// 			);
-// 		}
-// 	} else {
-// 		console.error("ranks is not an array or is undefined");
-// 	}
-// }
-
-export const AramRanks = () => {
+export const Season1 = () => {
 	const [displayRanks, setDisplayRanks] = useState([]);
 
 	const [mmrClickCounter, setMmrClickCounter] = useState(1);
@@ -757,35 +699,11 @@ export const AramRanks = () => {
 	const gridBtnClassNames = "grid-btn";
 
 	return (
-		<div className="wrapper">
-			<h3 className="aram-rankings-title glass">
-				<span className="retro-span">Retro </span>
-				<span className="future-span">Future </span>
-				<span className="aram-span">Aram </span>
-				<span className="rankings-span">Rankings</span>
-			</h3>
-
-			<div className="filter-key-container glass">
-				<h3>
-					<span className="rankings-span">Rankings</span> Filter Key
-				</h3>
-				<p className="ascending-key">
-					<span>Ascending</span> order(Lowest to Highest).
-				</p>
-				<p className="reverse-ascending-key">
-					<span>Descending</span> order(Highest to Lowest).
-				</p>
-				<p className="reverse-ascending-key">
-					1 click for <span>descending</span> order.
-				</p>
-				<p className="ascending-key">
-					2 clicks for <span>ascending</span> order.
-				</p>
-				<p>Click the stat labels below to sort.</p>
-			</div>
 
 			<div className="hero-container">
+        
 				<div className="ranks-container glass">
+          Season 1
 					<div className="table-info">
 						<p>
 							<strong>
@@ -891,6 +809,5 @@ export const AramRanks = () => {
 					</div>
 				</div>
 			</div>
-		</div>
 	);
 };
