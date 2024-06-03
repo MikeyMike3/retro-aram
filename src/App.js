@@ -24,13 +24,13 @@ const router = createBrowserRouter(
 			<Route index element={<Home />}></Route>
 			{/* <Route path="tier-list" element={<TierList />}></Route> */}
 			<Route path="tier-list" element={<TierListLayout />}>
-				<Route index element={<Navigate to="season_1" replace />} />
+				<Route index element={<Navigate to="season_2" replace />} />
 				<Route path="season_1" element={<Season1Tier />}></Route>
 				<Route path="season_2" element={<Season2Tier />}></Route>
 			</Route>
 
 			<Route path="rankings" element={<RankingsLayout />}>
-				<Route index element={<Navigate to="season_1" replace />} />
+				<Route index element={<Navigate to="season_2" replace />} />
 				<Route path="season_1" element={<Season1 />}></Route>
 				<Route path="season_2" element={<Season2 />}></Route>
 			</Route>

@@ -29,8 +29,8 @@ export const RankingsLayout = () => {
 						<select
 							className="styled-select"
 							onChange={handleNavigation}>
-							<option value="season_1">Season 1</option>
 							<option value="season_2">Season 2</option>
+							<option value="season_1">Season 1</option>
 						</select>
 					</div>
 				</div>

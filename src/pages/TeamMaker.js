@@ -6,7 +6,7 @@ import {
 	cTier,
 	dTier,
 	fTier,
-} from "./seasonTierList/Season1Tier.js";
+} from "./seasonTierList/Season2Tier.js";
 
 import { TeamMakerPlayer } from "../components/TeamMakerPlayer";
 
