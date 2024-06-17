@@ -8,7 +8,7 @@ const mmr = 100;
 export const season_2Ranks = [
 	{
 		name: "Siren",
-		history: ["w", "l", "w"],
+		history: ["w", "l", "w", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -21,7 +21,7 @@ export const season_2Ranks = [
 	},
 	{
 		name: "You",
-		history: ["l", "w", "l"],
+		history: ["l", "w", "l", "w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -34,7 +34,7 @@ export const season_2Ranks = [
 	},
 	{
 		name: "Plexo",
-		history: ["l", "w", "l"],
+		history: ["l", "w", "l", "w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -60,7 +60,7 @@ export const season_2Ranks = [
 	},
 	{
 		name: "Fries",
-		history: ["w", "l", "w"],
+		history: ["w", "l", "w", "w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -99,7 +99,7 @@ export const season_2Ranks = [
 	},
 	{
 		name: "Amp",
-		history: ["l", "w", "l"],
+		history: ["l", "w", "l", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -125,7 +125,7 @@ export const season_2Ranks = [
 	},
 	{
 		name: "Loli",
-		history: ["w", "l", "w"],
+		history: ["w", "l", "w", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -151,7 +151,7 @@ export const season_2Ranks = [
 	},
 	{
 		name: "Gucci",
-		history: ["w", "l", "w"],
+		history: ["w", "l", "w", "l", "l"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
@@ -190,7 +190,7 @@ export const season_2Ranks = [
 	},
 	{
 		name: "Rose",
-		history: [],
+		history: ["w", "w"],
 		wins: 0,
 		losses: 0,
 		totalGamesPlayed: 0,
